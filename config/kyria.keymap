@@ -11,9 +11,14 @@
     combos {
         compatible = "zmk,combos";
 
-        new_combo {
+        CAD {
             bindings = <&trans>;
             key-positions = <24 41 49>;
+        };
+
+        Lock {
+            bindings = <&trans>;
+            key-positions = <40 21>;
         };
     };
 
