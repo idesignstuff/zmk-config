@@ -11,9 +11,11 @@
 #   - board: nice_nano_v2
 #     shield: reviung41
 #
----
+
 include:
   - board: seeeduino_xiao_ble
-    shield: kyria_left
+    shield: klein_left
   - board: seeeduino_xiao_ble
-    shield: kyria_right
+    shield: klein_right
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
