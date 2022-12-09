@@ -6,6 +6,7 @@ requires: [seeed_xiao]
 features:
   - keys
   - encoder
+  - oled
 siblings:
   - klein_left
   - klein_right
