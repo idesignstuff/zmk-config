@@ -42,9 +42,9 @@
 &kp Q     &kp W    &kp E     &kp R     &kp T                     &kp Y     	&kp U     &kp I     &kp O     &kp P
 &mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F &kp G           &kp H       &mt RSHFT J &mt RCTRL K &mt RALT L  &mt LGUI SEMI
 &kp Z     &kp X    &kp C     &kp V     &kp B                     &kp N     	&kp M     &kp COMMA &kp DOT   &kp T
-&kp ESC	  &lt NAV SPACE  &kp TAB &bootloader                           			&bootloader  &kp RET &lt NUM BKSP &kp DEL
+&kp ESC	  &lt NAV SPACE  &kp TAB &bootloader                           			&kp C_MUTE  &kp RET &lt NUM BKSP &kp DEL
 			>;
-		sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 		nav_layer {
@@ -53,9 +53,9 @@
 &kp Q     &kp W    &kp E     &kp R     &kp T                     &kp Y     	&kp HOME     &kp PG_UP     &kp PG_DN     &kp END
 &mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F &kp G            &kp X		&kp LEFT    &kp DOWN    &kp UP	&kp RIGHT
 &kp Z     &kp X    &kp C     &kp V     &kp B                     &kp N     	&kp M     &kp COMMA &kp DOT   &kp T
-&kp ESC	  &kp SPACE  &kp TAB &bootloader                           			&bootloader  &kp RET &kp BKSP &kp DEL
+&kp ESC	  &kp SPACE  &kp TAB &bootloader                           			&kp C_MUTE  &kp RET &kp BKSP &kp DEL
 			>;
-		sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 		num_layer {
@@ -64,9 +64,9 @@
 &kp Q     &kp N7   &kp N8   &kp N9     &kp T                     &kp Y     	&kp U     &kp I     &kp O     &kp P
 &mt LGUI A  &kp N4   &kp N5   &kp N6 &kp G            &kp X		&kp LEFT    &kp DOWN    &kp UP	&kp RIGHT
 &kp Z     &kp N1   &kp N2   &kp N3     &kp B                     &kp N     	&kp M     &kp COMMA &kp DOT   &kp T
-&kp ESC	  &kp N0  &kp TAB &bootloader                           			&bootloader  &kp RET &kp BKSP &kp A
+&kp ESC	  &kp N0  &kp TAB &bootloader                           			&kp C_MUTE  &kp RET &kp BKSP &kp A
 			>;
-		sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 		fun_layer {
@@ -75,9 +75,9 @@
 &kp Q     &kp F7   &kp F8   &kp F9     &kp T                     &kp Y     	&kp U     &kp I     &kp O     &kp P
 &mt LGUI A  &kp F4   &kp F5   &kp F6 &kp G            &kp X		&kp LEFT    &kp DOWN    &kp UP	&kp RIGHT
 &kp Z     &kp F1	&kp F2	&kp F3     &kp B                     &kp N     	&kp M     &kp COMMA &kp DOT   &kp T
-&kp ESC	  &kp SPACE  &kp TAB &bootloader                           			&bootloader  &kp RET &kp BKSP &kp A
+&kp ESC	  &kp SPACE  &kp TAB &bootloader                           			&kp C_MUTE  &kp RET &kp BKSP &kp A
 			>;
-		sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 		sym_layer {
@@ -86,9 +86,9 @@
 &kp Q     &kp W    &kp E     &kp R     &kp T                     &kp Y     	&kp U     &kp I     &kp O     &kp P
 &mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F &kp G            &kp X		&kp LEFT    &kp DOWN    &kp UP	&kp RIGHT
 &kp Z     &kp X    &kp C     &kp V     &kp B                     &kp N     	&kp M     &kp COMMA &kp DOT   &kp T
-&kp ESC	  &kp SPACE  &kp TAB &bootloader                           			&bootloader  &kp RET &kp BKSP &kp A
+&kp ESC	  &kp SPACE  &kp TAB &bootloader                           			&kp C_MUTE  &kp RET &kp BKSP &kp A
 			>;
-		sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 		media_layer {
@@ -99,7 +99,7 @@
 &kp Z     &kp X    &kp C     &kp V     &kp B                     &kp N     	&kp M     &kp COMMA &kp DOT   &kp T
 &kp ESC	  &kp SPACE  &kp TAB &bootloader                           			&bootloader  &kp RET &kp BKSP &kp A
 			>;
-		sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 	};
 };
