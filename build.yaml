@@ -4,11 +4,11 @@
 # control, add individual board + shield combinations to
 # the `include` property, e.g:
 #
-# board: [ "nice_nano_v2" ]
+# board: [ "seeeduino_xiao_ble" ]
 # shield: [ "corne_left", "corne_right" ]
 # include:
 #   - board: bdn9_rev2
-#   - board: nice_nano_v2
+#   - board: seeeduino_xiao_ble
 #     shield: reviung41
 #
 ---
