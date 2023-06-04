@@ -1,0 +1,5 @@
+config SHIELD_NARSIL_LEFT
+    def_bool $(shields_list_contains,narsil_left)
+
+config SHIELD_NARSIL_RIGHT
+    def_bool $(shields_list_contains,narsil_right)  
