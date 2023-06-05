@@ -1,0 +1,49 @@
+/*
+ * Copyright (c) 2023 Christian Ritchie
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "narsil.dtsi"
+
+&kscan0 {
+    col-gpios
+        = <&xiao_d 1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&xiao_d 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&xiao_d 3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&xiao_d 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&xiao_d 11  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
+};
+
+&left_encoder {
+    status = "okay";
+};
+
+&pwm0 {
+    status = "okay";
+    /* Red LED P0_26 or D11, Green LED P0_30 or D12, Blue LED P0_6 or D13 */
+    ch0-pin = <26>; /* LED RED */
+    ch0-inverted; 
+    ch1-pin = <30>; /* LED GRN */
+    ch1-inverted;
+    ch2-pin = <6>;  /* LED BLU */
+    ch2-inverted;
+}; 
+
+
+/ {
+    backlight: pwmleds {
+        compatible = "pwm-leds";
+        label = "Backlight LEDs";
+        pwm_led_0 {
+            pwms = <&pwm0 26>; label = "Backlight LED RED";
+        };
+        pwm_led_1 {
+            pwms = <&pwm0 30>; label = "Backlight LED GRN";
+        };
+        pwm_led_2 {
+            pwms = <&pwm0 6>; label = "Backlight LED BLU";
+        };
+    };
+};
