@@ -1,0 +1,13 @@
+file_format: "1"
+id: narsil
+name: klein
+type: shield
+requires: [seeed_xiao]
+exposes:
+  - i2c_oled
+features:
+  - keys
+  - encoder
+siblings:
+  - klein_left
+  - klein_right
