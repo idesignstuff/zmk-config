@@ -143,7 +143,7 @@
                                       &lt PAD ESC  &lt NAV SPACE  &lt BLU TAB         &lt SYM RET  &lt NUM BSPC    &lt PS DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         nav_layer {
@@ -156,7 +156,7 @@
                                             &kp LCTRL       &trans      &trans          &kp RET       &kp BSPC       &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
             };
 
         num_layer {
@@ -169,7 +169,7 @@
                             &kp PERIOD     &kp N0    &kp MINUS         &trans       &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         fun_layer {
@@ -182,7 +182,7 @@
                           &kp ESC        &kp SPACE      &kp TAB        &trans     &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         sym_layer {
@@ -195,7 +195,7 @@
                                         &kp LS(PERIOD)     &kp LS(N0)  &kp LS(MINUS)        &trans     &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         PS_LAYER {
@@ -207,7 +207,7 @@
    &kp LCTRL  &kp LC(X)      &kp LC(C)    &kp LC(V)       &kp B        &bootloader      &kp LC(Z)        &trans        &trans        &trans      &trans      &trans
                                              &trans      &trans        &tog 0         &kp K_STOP2      &kp K_PP    &kp K_MUTE
             >;
-            sensor-bindings = <&inc_dec_kp  LBKT RBKT &inc_dec_kp LS(LBKT) LS(RBKT)>;
+            sensor-bindings = <&inc_dec_kp  LBKT RBKT>; //  &inc_dec_kp LS(LBKT) LS(RBKT)>;
             /*sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;*/
         };
 
@@ -221,7 +221,7 @@
                                            &trans       &trans     &trans         &trans       &trans      &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         PAD_LAYER {
@@ -234,7 +234,7 @@
                                    &trans  &trans  &trans        &kp KP_DOT  &kp KP_N0     &kp EQUAL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
