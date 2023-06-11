@@ -1,6 +1,6 @@
 file_format: "1"
 id: narsil
-name: klein
+name: narsil
 type: shield
 requires: [seeed_xiao]
 exposes:
@@ -9,5 +9,5 @@ features:
   - keys
   - encoder
 siblings:
-  - klein_left
-  - klein_right
+  - narsil_left
+  - narsil_right
