@@ -28,7 +28,9 @@
     ch1-pin = <30>; /* LED GRN */
     ch1-inverted;
     ch2-pin = <6>;  /* LED BLU */
-    ch2-inverted;
+    ch3-inverted;
+    ch3-pin = <5>;  /* encoder GND */
+    ch3-inverted;
 }; 
 
 
