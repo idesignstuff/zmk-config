@@ -74,9 +74,9 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(4,7) RC(4,8) RC(3,5) RC(3,6) RC(3,7) 
     };
 };
 
-low-gpios =
+/ {low-gpios =
     <&gpio0 5 GPIO_ACTIVE_LOW | GPIO_PULL_DOWN>,
-    ;
+    };
     
 &pwm0 {
     status = "okay";
