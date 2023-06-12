@@ -40,3 +40,5 @@ config LED_PWM
     default y
 
 endif # ZMK_BACKLIGHT
+
+CONFIG_ZMK_EXT_POWER y
