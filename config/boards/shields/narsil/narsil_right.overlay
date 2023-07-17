@@ -22,9 +22,10 @@
 
 /* &right_encoder {
     status = "okay";
-*/
+
 
 };
+*/
 
 &pwm0 {
     status = "okay";
