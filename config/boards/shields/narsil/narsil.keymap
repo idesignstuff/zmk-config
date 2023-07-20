@@ -144,7 +144,7 @@
                                       &lt BLU ESC  &lt NAV SPACE  &lt PAD TAB         &lt SYM RET  &lt NUM BSPC    &lt PS DEL
             >;
             // &gqt &reset C_A_D  &gqt &reset C_MUTE
-            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         nav_layer {
@@ -157,7 +157,7 @@
                                             &kp LCTRL       &trans      &trans          &kp RET       &kp BSPC       &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
             };
 
         num_layer {
@@ -170,7 +170,7 @@
                             &kp PERIOD     &kp N0    &kp MINUS         &trans       &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         fun_layer {
@@ -183,7 +183,7 @@
                           &kp ESC        &kp SPACE      &kp TAB        &trans     &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         sym_layer {
@@ -196,7 +196,7 @@
                                         &kp LS(PERIOD)     &kp LS(N0)  &kp LS(MINUS)        &trans     &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         PS_LAYER {
@@ -222,7 +222,7 @@
                                          &trans       &trans     &trans       &trans     &trans      &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         PAD_LAYER {
@@ -235,7 +235,7 @@
                                    &trans  &trans  &trans        &kp KP_DOT  &kp KP_N0     &kp EQUAL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
