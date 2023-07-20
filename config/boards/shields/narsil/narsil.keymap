@@ -144,7 +144,7 @@
                                       &lt BLU ESC  &lt NAV SPACE  &lt PAD TAB         &lt SYM RET  &lt NUM BSPC    &lt PS DEL
             >;
             // &gqt &reset C_A_D  &gqt &reset C_MUTE
-            sensor-bindings = <&inc_dec_kp UP DN>;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
         nav_layer {
