@@ -208,7 +208,7 @@
    &kp LCTRL  &kp LC(X)      &kp LC(C)    &kp LC(V)       &kp B        &trans         &kp LC(Z)        &trans        &trans        &trans      &trans      &trans
                                              &trans      &trans        &tog 0         &kp K_STOP2      &kp K_PP    &kp K_MUTE
             >;
-            /*sensor-bindings = <&inc_dec_kp  LBKT RBKT &inc_dec_kp LS(LBKT) LS(RBKT)>;*/
+            // sensor-bindings = <&inc_dec_kp  LBKT RBKT &inc_dec_kp LS(LBKT) LS(RBKT)>;
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
