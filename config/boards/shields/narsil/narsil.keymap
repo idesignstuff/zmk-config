@@ -157,7 +157,7 @@
                                             &kp LCTRL       &trans      &trans          &kp RET       &kp BSPC       &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DN &inc_dec_kp LEFT RIGHT>;
+            sensor-bindings = <&inc_dec_kp UP DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         num_layer {
