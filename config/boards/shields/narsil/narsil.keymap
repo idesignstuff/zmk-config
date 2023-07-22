@@ -158,7 +158,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp UP DN &inc_dec_kp LEFT RIGHT>;
-            };
+        };
 
         num_layer {
             label = " #12345 ";
