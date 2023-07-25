@@ -171,7 +171,7 @@
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
-        fun_layer {
+        /*fun_layer {
             label = " FUNC ";
             bindings = <
   &trans  &trans  &trans   &trans           &trans                                       &trans       &trans     &trans    &trans      &trans  
@@ -182,7 +182,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
-        };
+        };*/
 
         sym_layer {
             label = " !@#%&# ";
