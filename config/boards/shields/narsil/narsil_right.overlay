@@ -20,7 +20,7 @@
         ;
 };
 
-&right_encoder {
+/*&right_encoder {
     status = "okay";
 };
 
@@ -50,4 +50,4 @@
             pwms = <&pwm0 6>; label = "Backlight LED BLU";
         };
     };
-};
+};*/
