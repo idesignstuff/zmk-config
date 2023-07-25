@@ -19,7 +19,8 @@
 &left_encoder {
     status = "okay";
 };
-&pwm0 {
+
+/*&pwm0 {
     status = "okay";
     /* Red LED P0_26 or D11, Green LED P0_30 or D12, Blue LED P0_6 or D13 */
     ch0-pin = <26>; /* LED RED */
@@ -47,4 +48,4 @@
             label = "Backlight LED BLU";
         };
     };
-};
+};*/
