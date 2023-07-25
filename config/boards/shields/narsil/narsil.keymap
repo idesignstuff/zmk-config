@@ -175,7 +175,7 @@
             label = " FUNC ";
             bindings = <
   &trans  &trans  &trans   &trans           &trans                                       &trans       &trans     &trans    &trans      &trans  
- &kp F12  &kp F7  &kp F8   &kp F9           &reset                                       &reset       &trans     &trans    &trans  &bl BL_INC
+ &kp F12  &kp F7  &kp F8   &kp F9           &sys_reset                               &sys_reset       &trans     &trans    &trans  &bl BL_INC
  &kp F11  &kp F4  &kp F5   &kp F6       &kp SYSREQ                                       &trans    &kp LSHFT  &kp LCTRL  &kp LALT  &bl BL_DEC
  &kp F10  &kp F1  &kp F2   &kp F3  &kp PAUSE_BREAK                                       &trans       &trans     &trans    &trans  &bl BL_TOG 
                           &kp ESC        &kp SPACE &kp TAB  &trans &trans    &trans      &trans       &trans
