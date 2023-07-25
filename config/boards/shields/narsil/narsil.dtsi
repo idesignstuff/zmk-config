@@ -53,30 +53,30 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) 		 		RC(3,5) RC(3,6) RC(3,7) RC(3,8)  RC
         	status = "disabled";
     	};
 
-	right_encoder: encoder_right {
+	/*right_encoder: encoder_right {
          	compatible = "alps,ec11";
          	label = "RIGHT_ENCODER";
 	 	a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
          	b-gpios = <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
          	resolution = <2>;
 	 	status = "disabled";
-	};
+	};*/
 	
     sensors {
             compatible = "zmk,keymap-sensors";
-            sensors = <&left_encoder &right_encoder>;
+            sensors = <&left_encoder /*&right_encoder*/>;
         };
 };
 
 / {
-    chosen {
+    /*chosen {
         zmk,backlight = &backlight;
-    };
+    };*/
 };
 
    
-&pwm0 {
+/*&pwm0 {
     status = "okay";
     ch0-pin = <9>;
     ch0-inverted;
-};
+};*/
