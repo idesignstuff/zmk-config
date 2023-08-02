@@ -5,6 +5,7 @@
  */
 
 #include "narsil.dtsi"
+};
 
 &kscan0 {
     col-gpios
