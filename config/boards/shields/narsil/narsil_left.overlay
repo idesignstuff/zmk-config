@@ -5,8 +5,8 @@
  */
 
 #include "narsil.dtsi"
-};
 
+;
 &kscan0 {
     col-gpios
         = <&gpio0 2   (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>
