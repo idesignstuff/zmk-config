@@ -69,14 +69,12 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) 		 		RC(3,5) RC(3,6) RC(3,7) RC(3,8)  RC
 };
 
 / {
-    /*chosen {
-        zmk,backlight = &backlight;
-    };*/
-};
+    chosen {
+      zmk,battery = &vbatt;
+    };
 
-   
-/*&pwm0 {
-    status = "okay";
-    ch0-pin = <9>;
-    ch0-inverted;
-};*/
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+        label = "VBATT";
+    };
+}
