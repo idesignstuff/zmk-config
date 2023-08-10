@@ -3,8 +3,6 @@ id: narsil
 name: narsil
 type: shield
 requires: [seeed_xiao]
-exposes:
-  - i2c_oled
 features:
   - keys
   - encoder
