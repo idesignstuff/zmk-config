@@ -4,6 +4,9 @@
 # uncomment to allow Windows to update battery level after pairing
 CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION=n
 
+# uncomment to stop ring buffer full warning in log
+CONFIG_USB_CDC_ACM_LOG_LEVEL_WRN=y
+
 if SHIELD_NARSIL_LEFT
 
 config ZMK_KEYBOARD_NAME
