@@ -1,43 +1,22 @@
+# Copyright (c) 2021 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+# uncomment to allow Windows to update battery level after pairing
+CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION=n
+
 if SHIELD_NARSIL_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Narsil"
+	default "narsil"
 
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
-    	default y
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
 
 endif
 
 if SHIELD_NARSIL_LEFT || SHIELD_NARSIL_RIGHT
 
 config ZMK_SPLIT
-    default y
+	default y
 
 endif
-if ZMK_DISPLAY
-
-config I2C
-	default y
-
-config SSD1306
-	default y
-
-config SSD1306_REVERSE_MODE
-	default y
-
-endif # ZMK_DISPLAY
-
-if LVGL
-
-endif # LVGL
-
-if ZMK_BACKLIGHT
-
-config PWM
-    default y
-
-config LED_PWM
-    default y
-
-endif # ZMK_BACKLIGHT
-
