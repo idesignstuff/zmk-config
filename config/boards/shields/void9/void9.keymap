@@ -1,1 +1,23 @@
-# keymappy
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+// -------------------------------
+// |   ESC   |  C/A/D  | Alt/Tab |
+// |  SHFT   |  MUTE   | CTRL/L  | 
+// |  CTRL   |   ALT   |  Space  | 
+// -------------------------------
+            bindings = <
+    &kp ESC   &kp Q    &kp W   
+    &kp A     &kp S    &kp D    
+    &kp C     &kp V    &kp B
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+    };
+};
