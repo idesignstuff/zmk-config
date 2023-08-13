@@ -7,19 +7,10 @@
 # uncomment to stop ring buffer full warning in log
 CONFIG_USB_CDC_ACM_LOG_LEVEL_WRN=y
 
-if SHIELD_NARSIL_LEFT
+if SHIELD_MY_BOARD
 
 config ZMK_KEYBOARD_NAME
-	default "narsil"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-	default y
+    default "void9"
 
 endif
 
-if SHIELD_NARSIL_LEFT || SHIELD_NARSIL_RIGHT
-
-config ZMK_SPLIT
-	default y
-
-endif
