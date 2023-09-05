@@ -16,10 +16,10 @@
 // |  CTRL   |   ALT   |  Space  | 
 // -------------------------------
             bindings = < 
-    &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
-    &kp LSHFT   &kp MUTE          &kp A    
-    &kp LCTRL   &kp LALT          &kp SPACE
-            >;
+                        &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
+                        &kp LSHFT   &kp C_MUTE          &kp A    
+                        &kp LCTRL   &kp LALT          &kp SPACE
+                        >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
