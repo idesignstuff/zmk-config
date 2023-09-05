@@ -13,7 +13,7 @@
 // -------------------------------
             bindings = <
     &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
-    &kp LSFT    &kp MUTE          &kp LGUI(L)    
+    &kp LSFT    &kp MUTE          &kp LG(L)    
     &kp LCTRL   &kp LALT          &kp SPACE
             >;
 
