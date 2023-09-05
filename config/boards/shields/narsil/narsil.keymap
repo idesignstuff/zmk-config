@@ -56,15 +56,23 @@
     quick-release;
     /delete-property/ ignore-modifiers;
   };
+
 / {
     combos {
         compatible = "zmk,combos";
+
+        combo_grave{
+            bindings = <&kp GRAVE>;
+            key-positions = <0 1>;
+            layers = <0>;
+        };
 
         combo_capslock {
             bindings = <&caps_word>;
             key-positions = <23 26>;
             layers = <0>;
         };
+
         combo_hyphen{
             bindings = <&kp MINUS>;
             key-positions = <8 9>;
@@ -89,7 +97,8 @@
         };
     };
 };
-  / {
+
+/ {
     keymap {
       compatible = "zmk,keymap";
         default_layer {
