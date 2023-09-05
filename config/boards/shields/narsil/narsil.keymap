@@ -139,16 +139,16 @@
         num_layer {
 // -------------------------------------------------------------------------------------------------
 //  | none | none  | none  | none  | none |                  | (     | 	 =     | (   |   ) | /  | 
-//  | none | none  | none  | none  | none |                  |     ) |    7    | 8   | 9   | -  | 
+//  | BT0  | BT1   | BT2   | BT3   | BT4  |                  |     ) |    7    | 8   | 9   | -  | 
 //  | none | none  | none  | none  | none |                  | none  |    4    | 5   | 6   | +  | 
-//  | none | none  | none  | none  | none | trans |  | trans | none  |    1    | 2   | 3   | *  | 
+//  |BT_CLR| none  | none  | none  | none | trans |  | trans | none  |    1    | 2   | 3   | *  | 
 //                         | trans | trans| trans |  |    0  | .     | ENTER   | 
           bindings = <
-   &trans &trans  &trans  &trans  &trans                       &kp LS(N9)  &kp KP_EQUAL &kp LS(N9)   &kp LS(N0) 	&kp KP_SLASH 
-   &trans &trans  &trans  &trans  &trans                       &kp LS(N0)  &kp KP_N7    &kp KP_N8    &kp KP_N9	&kp KP_MINUS 
-   &trans &trans  &trans  &trans  &trans                       &trans       &kp KP_N4    &kp KP_N5    &kp KP_N6 	&kp KP_PLUS  
-   &trans &trans  &trans  &trans  &trans &trans         &trans  &trans      &kp KP_N1    &kp KP_N2    &kp KP_N3	&kp KP_ASTERISK   
-                       &trans &trans &trans    &kp KP_N0  &kp KP_DOT  &kp KP_ENTER      
+   &trans       &trans       &trans       &trans       &trans                       &kp LS(N9)  &kp KP_EQUAL &kp LS(N9)   &kp LS(N0) 	&kp KP_SLASH 
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                 &kp LS(N0)     &kp KP_N7    &kp KP_N8    &kp KP_N9	&kp KP_MINUS 
+   &trans       &trans       &trans       &trans       &trans                           &trans     &kp KP_N4    &kp KP_N5    &kp KP_N6 	&kp KP_PLUS  
+   &bt BT_CLR   &trans       &trans       &trans       &trans    &trans     &trans      &trans     &kp KP_N1    &kp KP_N2    &kp KP_N3	&kp KP_ASTERISK   
+                                          &trans       &trans    &trans  &kp KP_N0  &kp KP_DOT  &kp KP_ENTER      
           >;
 
           sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp DOWN UP>;
