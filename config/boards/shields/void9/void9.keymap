@@ -1,6 +1,10 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
+  #include <behaviors.dtsi>
+  #include <dt-bindings/zmk/keys.h>
+  #include <dt-bindings/zmk/bt.h>
+  #include <dt-bindings/zmk/ext_power.h
 
+  #define DEFAULT 0
+  
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -11,7 +15,7 @@
 // |  SHFT   |  MUTE   | CTRL/L  | 
 // |  CTRL   |   ALT   |  Space  | 
 // -------------------------------
-            bindings = <
+            bindings = < 
     &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
     &kp LSFT    &kp MUTE          &kp LG(L)    
     &kp LCTRL   &kp LALT          &kp SPACE
