@@ -3,6 +3,10 @@ left_encoder: encoder_left {
         label = "LEFT_ENCODER";
         a-gpios = <7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        resolution = <4>;
-        status = "disabled";
+        steps = <80>;
+    };
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+        triggers-per-rotation = <20>;
     };

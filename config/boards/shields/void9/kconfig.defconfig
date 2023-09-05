@@ -7,7 +7,7 @@
 # uncomment to stop ring buffer full warning in log
 CONFIG_USB_CDC_ACM_LOG_LEVEL_WRN=y
 
-if SHIELD_MY_BOARD
+if SHIELD_VOID9
 
 config ZMK_KEYBOARD_NAME
     default "void9"

@@ -12,9 +12,9 @@
 // |  CTRL   |   ALT   |  Space  | 
 // -------------------------------
             bindings = <
-    &kp ESC   &kp Q    &kp W   
-    &kp A     &kp S    &kp D    
-    &kp C     &kp V    &kp B
+    &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
+    &kp LSFT    &kp MUTE          &kp LGUI(L)    
+    &kp LCTRL   &kp LALT          &kp SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
