@@ -16,17 +16,17 @@
                 layers = <-1>;
               };
               combo_top{
-                bindings = <&bootloader>;
+                bindings = <&to TOP>;
                 key-positions = <0 2;
                 layers = <-1>;
               };
               combo_middle{
-                bindings = <&bootloader>;
+                bindings = <&to MIDDLE>;
                 key-positions = <3 5>;
                 layers = <-1>;
               };
               combo_bottom{
-                bindings = <&TO>;
+                bindings = <&to BOTTOM>;
                 key-positions = <6 8>;
                 layers = <-1>;
               };
@@ -38,11 +38,13 @@
         compatible = "zmk,keymap";
 
         top_layer {
-// -------------------------------
+// ┌─────────┬─────────┬─────────┐
 // |   ESC   |  C/A/D  | Alt/Tab |
-// |  SHFT   |  MUTE   | CTRL/L  | 
+// ├─────────┼─────────┼─────────┤
+// |  SHFT   |   MUTE  |  CTRL/L |  -(Vol)+
+// ├─────────┼─────────┼─────────┤
 // |  CTRL   |   ALT   |  Space  | 
-// -------------------------------
+// └─────────┴─────────┴─────────┘
             bindings = < 
                         &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
                         &kp LSHFT   &kp C_MUTE        &kp LG(L)    
@@ -53,14 +55,16 @@
         };
 
             middle_layer {
-// -------------------------------
+// ┌─────────┬─────────┬─────────┐
 // |   ESC   |  C/A/D  | Alt/Tab |
-// |  SHFT   |  MUTE   | CTRL/L  | 
+// ├─────────┼─────────┼─────────┤
+// |  SHFT   |  HOME   | CTRL/L  | ↑(Arrow)↓
+// ├─────────┼─────────┼─────────┤
 // |  CTRL   |   ALT   |  Space  | 
-// -------------------------------
+// └─────────┴─────────┴─────────┘
             bindings = < 
                         &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
-                        &kp LSHFT   &kp C_MUTE          &kp A    
+                        &kp LSHFT   &kp HOME          &kp A    
                         &kp LCTRL   &kp LALT          &kp SPACE
                         >;
 
@@ -68,14 +72,16 @@
         };
 
         bottom_layer {
-// -------------------------------
+// ┌─────────┬─────────┬─────────┐
 // |   ESC   |  C/A/D  | Alt/Tab |
-// |  SHFT   |  MUTE   | CTRL/L  | 
+// ├─────────┼─────────┼─────────┤
+// |  SHFT   |   END   | CTRL/L  | ←(Arrow)→
+// ├─────────┼─────────┼─────────┤
 // |  CTRL   |   ALT   |  Space  | 
 // -------------------------------
             bindings = < 
                         &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
-                        &kp LSHFT   &kp C_MUTE          &kp A    
+                        &kp LSHFT   &kp END           &kp A    
                         &kp LCTRL   &kp LALT          &kp SPACE
                         >;
 
