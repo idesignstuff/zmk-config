@@ -2,14 +2,57 @@
   #include <dt-bindings/zmk/keys.h>
   #include <dt-bindings/zmk/bt.h>
   #include <dt-bindings/zmk/ext_power.h>
-
-  #define DEFAULT 0
   
+  #define TOP 0
+  #define MIDDLE 1
+  #define BOTTOM 2
+  / {
+    combos {
+            compatible = "zmk,combos";
+
+              combo_bootloader{
+                bindings = <&bootloader>;
+                key-positions = <0 8>;
+                layers = <-1>;
+              };
+              combo_top{
+                bindings = <&bootloader>;
+                key-positions = <0 2;
+                layers = <-1>;
+              };
+              combo_middle{
+                bindings = <&bootloader>;
+                key-positions = <3 5>;
+                layers = <-1>;
+              };
+              combo_bottom{
+                bindings = <&TO>;
+                key-positions = <6 8>;
+                layers = <-1>;
+              };
+          };
+    };
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        top_layer {
+// -------------------------------
+// |   ESC   |  C/A/D  | Alt/Tab |
+// |  SHFT   |  MUTE   | CTRL/L  | 
+// |  CTRL   |   ALT   |  Space  | 
+// -------------------------------
+            bindings = < 
+                        &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
+                        &kp LSHFT   &kp C_MUTE        &kp LG(L)    
+                        &kp LCTRL   &kp LALT          &kp SPACE
+                        >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+            middle_layer {
 // -------------------------------
 // |   ESC   |  C/A/D  | Alt/Tab |
 // |  SHFT   |  MUTE   | CTRL/L  | 
@@ -21,7 +64,22 @@
                         &kp LCTRL   &kp LALT          &kp SPACE
                         >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp UP DN>;
+        };
+
+        bottom_layer {
+// -------------------------------
+// |   ESC   |  C/A/D  | Alt/Tab |
+// |  SHFT   |  MUTE   | CTRL/L  | 
+// |  CTRL   |   ALT   |  Space  | 
+// -------------------------------
+            bindings = < 
+                        &kp ESC     &kp LC(LA(DEL))   &kp LA(TAB)  
+                        &kp LSHFT   &kp C_MUTE          &kp A    
+                        &kp LCTRL   &kp LALT          &kp SPACE
+                        >;
+
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
         };
     };
 };
