@@ -1,0 +1,12 @@
+file_format: "1"
+id: void9
+name: Void9
+type: shield
+url: https://github.com/idesignstuff/config/boards/shields/void9
+requires: [rpi_pico]
+exposes: []
+features:
+  - keys
+  - encoders
+siblings:
+  - void9
