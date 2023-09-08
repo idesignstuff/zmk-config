@@ -17,7 +17,7 @@
               };
               combo_top{
                 bindings = <&to TOP>;
-                key-positions = <0 2;
+                key-positions = <0 2>;
                 layers = <0 1 2>;
               };
               combo_middle{
