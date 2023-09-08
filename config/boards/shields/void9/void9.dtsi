@@ -1,4 +1,10 @@
-left_encoder: encoder_left {
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+		
+	};
+
+    left_encoder: encoder_left {
         compatible = "alps,ec11";
         label = "LEFT_ENCODER";
         a-gpios = <&gpio0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -10,3 +16,4 @@ left_encoder: encoder_left {
         sensors = <&left_encoder>;
         triggers-per-rotation = <15>;
     };
+};
