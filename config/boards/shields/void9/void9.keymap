@@ -68,7 +68,7 @@
                         &kp LCTRL   &kp LALT          &kp SPACE
                         >;
 
-              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+              sensor-bindings = <&inc_dec_kp UP DOWN>;
             };
 
         bottom_layer {
