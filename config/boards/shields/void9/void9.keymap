@@ -13,22 +13,22 @@
               combo_bootloader{
                 bindings = <&bootloader>;
                 key-positions = <0 8>;
-                layers = <-1>;
+                layers = <0 1 2>;
               };
               combo_top{
                 bindings = <&to TOP>;
                 key-positions = <0 2;
-                layers = <-1>;
+                layers = <0 1 2>;
               };
               combo_middle{
                 bindings = <&to MIDDLE>;
                 key-positions = <3 5>;
-                layers = <-1>;
+                layers = <0 1 2>;
               };
               combo_bottom{
                 bindings = <&to BOTTOM>;
                 key-positions = <6 8>;
-                layers = <-1>;
+                layers = <0 1 2>;
               };
           };
     };
