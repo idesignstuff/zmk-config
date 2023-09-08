@@ -1,7 +1,4 @@
-/ {
-    chosen {
-        zmk,kscan = &kscan0;
-    };
+#include "void9.dtsi"
 
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
@@ -20,8 +17,7 @@
             , <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
-};
 
-&left_encoder {
-    status = "okay";
-};
+    &left_encoder {
+        status = "okay";
+    };
