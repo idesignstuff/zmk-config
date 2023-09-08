@@ -69,7 +69,7 @@
                         >;
 
             sensor-bindings = <&inc_dec_kp UP DN>;
-        };
+};
 
         bottom_layer {
 // ┌─────────┬─────────┬─────────┐
