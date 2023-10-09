@@ -95,6 +95,12 @@
             key-positions = <29 39>;
             layers = <0>;
         };
+
+        combo_rcd {
+            bindings = <&rcd_macro>;
+            key-positions = <13 12>;
+            require-prior-idle-ms = <50>;
+        };
     };
 };
 
