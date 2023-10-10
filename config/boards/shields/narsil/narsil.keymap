@@ -90,10 +90,35 @@
             layers = <0>;
         };
 
-        combo_lock {
-            bindings = <&kp LG(L)>;
-            key-positions = <29 39>;
-            layers = <0>;
+        combo_rcd {
+            bindings = <&rcd_macro>;
+            key-positions = <13 12>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_rtc {
+            bindings = <&rtc_macro>;
+            key-positions = <13 14>;
+        };
+
+        open_par {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <44 43>;
+        };
+
+        close_par {
+            bindings = <&kp KP_RPAR>;
+            key-positions = <45 46>;
+        };
+
+        open_brkt {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <42 43>;
+        };
+
+        close_brkt {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <47 46>;
         };
     };
 };
@@ -107,6 +132,12 @@
             label = "RCD_MACRO";
             wait-ms = <30>;
             tap-ms = <50>;
+        };
+        rtc_macro: rtc_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp R &kp I &kp T &kp C &kp H &kp C &kp D>;
+            label = "RTC_MACRO";
         };
     };
 
@@ -122,11 +153,11 @@
             //                     | FN/ESC|NAV/SPACE|NUM/TAB|      |NUM/ENTER|NAV/BSPACE|FN/DEL |
 
             bindings = <
-&gqt LS(N1) N1  &gqt LS(N2) N2  &gqt LS(N3) N3  &gqt LS(N4) N4  &gqt LS(N5) N5                                                    &gqt LS(N6) N6               &gqt LS(N7) N7              &gqt LS(N8) N8                 &gqt LS(N9) N9     &gqt LS(N0) N0
-&kp Q           &kp W           &kp E           &kp R           &kp T                                                             &kp Y                        &kp U                       &kp I                          &kp O              &gqt PSCRN P
-&kp A           &mt LALT S      &mt LCTRL D     &mt LSHFT F     &kp G                            &kp H               &mt RSHFT J                  &mt RCTRL K                  &mt RALT L                   &mt LGUI SQT
-&kp Z           &kp X           &kp C           &kp V           &kp B           &kp LC(LA(DEL))         &kp C_MUTE                &kp N                        &kp M                       &gqt SEMI COMMA                &gqt LS(SEMI) DOT  &gqt LS(FSLH) FSLH
-                                                &lt FN ESC      &lt NAV SPACE   &lt NUM TAB             &lt NUM RET               &lt NAV BSPC                 &lt FN DEL
+&gqt LS(N1) N1  &gqt LS(N2) N2  &gqt LS(N3) N3  &gqt LS(N4) N4  &gqt LS(N5) N5                                         &gqt LS(N6) N6   &gqt LS(N7) N7   &gqt LS(N8) N8     &gqt LS(N9) N9     &gqt LS(N0) N0
+&kp Q           &kp W           &kp E           &kp R           &kp T                                                  &kp Y            &kp U            &kp I              &kp O              &gqt PSCRN P
+&kp A           &mt LALT S      &mt LCTRL D     &mt LSHFT F     &kp G                                                  &kp H            &mt RSHFT J      &mt RCTRL K        &mt RALT L         &mt LGUI SQT
+&kp Z           &kp X           &kp C           &kp V           &kp B           &kp LC(LA(DEL))         &kp C_MUTE     &kp N            &kp M            &gqt SEMI COMMA    &gqt LS(SEMI) DOT  &gqt LS(FSLH) FSLH
+                                                &lt FN ESC      &lt NAV SPACE   &lt NUM TAB             &lt NUM RET    &lt NAV BSPC     &lt FN DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
@@ -141,10 +172,10 @@
             //                         | trans | trans| trans |  | trans | trans | trans|      
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                         &trans            &kp HOME             &kp INS          &kp PG_UP  &trans
-&trans  &trans  &trans  &trans  &trans                                         &trans            &kp END              &kp UP           &kp PG_DN  &trans
-&trans  &trans  &trans  &trans  &trans          &kp PSCRN            &kp LEFT          &kp DOWN            &kp RIGHT           &trans
-&trans  &trans  &trans  &trans  &trans  &trans             &tog NUM            &trans            &kp DOWN             &trans           &trans     &trans
+&trans  &trans  &trans  &trans  &trans                                         &trans     &kp HOME    &kp INS    &kp PG_UP  &trans
+&trans  &trans  &trans  &trans  &trans                                         &trans     &kp END     &kp UP     &kp PG_DN  &trans
+&trans  &trans  &trans  &trans  &trans                                         &kp PSCRN  &kp LEFT    &kp DOWN   &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans             &tog NUM            &trans     &trans      &kp DOWN   &trans     &trans
                         &trans  &trans  &trans             &trans              &trans
             >;
 
@@ -160,11 +191,11 @@
             //                         | trans | trans| trans |  |    0  | .     | ENTER   | 
 
             bindings = <
-&trans        &trans        &trans        &trans        &trans                                              &kp LS(N9)             &kp KP_EQUAL             &kp LS(N9)               &kp LS(N0)  &kp KP_SLASH
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &kp LS(N0)             &kp KP_N7                &kp KP_N8                &kp KP_N9   &kp KP_MINUS
-&trans        &trans        &trans        &trans        &trans                &trans             &kp KP_N4              &kp KP_N5                &kp KP_N6              &kp KP_PLUS
-&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &trans                &trans                 &kp KP_N1                &kp KP_N2                &kp KP_N3   &kp KP_ASTERISK
-                                          &trans        &trans        &trans          &kp KP_N0             &kp KP_DOT             &kp KP_ENTER
+&trans        &trans        &trans        &trans        &trans                                    &kp LS(N9)  &kp KP_EQUAL    &kp LS(N9)  &kp LS(N0)  &kp KP_SLASH
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                              &kp LS(N0)  &kp KP_N7       &kp KP_N8   &kp KP_N9   &kp KP_MINUS
+&trans        &trans        &trans        &trans        &trans                                    &trans      &kp KP_N4       &kp KP_N5   &kp KP_N6   &kp KP_PLUS
+&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &trans      &trans      &kp KP_N1       &kp KP_N2   &kp KP_N3   &kp KP_ASTERISK
+                                          &trans        &trans        &trans          &kp KP_N0   &kp KP_DOT  &kp KP_ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp DOWN UP>;
@@ -179,11 +210,11 @@
             //                              | trans   | trans    |   trans  ||  trans   | trans | trans  | 
 
             bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                      &kp F6              &kp F7              &kp F8              &kp F9      &kp F10
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                &trans              &bt BT_CLR          &bt BT_PRV          &bt BT_NXT  &trans
-&trans        &kp LPAR      &kp RPAR      &trans        &sys_reset                 &sys_reset               &trans              &trans              &trans              &trans
-&bt BT_CLR    &kp LBKT      &kp RBKT      &trans        &trans        &bootloader              &bootloader          &trans              &trans              &trans              &trans      &trans
-                                          &trans        &trans        &trans                   &kp C_PREV           &kp C_NEXT          &trans
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                         &kp F6      &kp F7      &kp F8       &kp F9      &kp F10
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                   &trans      &bt BT_CLR  &bt BT_PRV   &bt BT_NXT  &trans
+&trans        &trans        &trans        &trans        &sys_reset                                     &sys_reset  &trans      &trans       &trans      &trans
+&bt BT_CLR    &trans        &trans        &trans        &trans        &bootloader       &bootloader    &trans      &trans      &trans       &trans      &trans
+                                          &trans        &trans        &trans            &kp C_PREV     &kp C_NEXT  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp DOWN UP>;
