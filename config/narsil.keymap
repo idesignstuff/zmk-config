@@ -90,12 +90,6 @@
             layers = <0>;
         };
 
-        combo_lock {
-            bindings = <&kp LG(L)>;
-            key-positions = <29 39>;
-            layers = <0>;
-        };
-
         combo_rcd {
             bindings = <&rcd_macro>;
             key-positions = <13 12>;
@@ -105,6 +99,26 @@
         combo_rtc {
             bindings = <&rtc_macro>;
             key-positions = <13 14>;
+        };
+
+        open_par {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <44 43>;
+        };
+
+        close_par {
+            bindings = <&kp KP_RPAR>;
+            key-positions = <45 46>;
+        };
+
+        open_brkt {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <42 43>;
+        };
+
+        close_brkt {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <47 46>;
         };
     };
 };
@@ -158,10 +172,10 @@
             //                         | trans | trans| trans |  | trans | trans | trans|      
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                         &trans            &kp HOME             &kp INS          &kp PG_UP  &trans
-&trans  &trans  &trans  &trans  &trans                                         &trans            &kp END              &kp UP           &kp PG_DN  &trans
-&trans  &trans  &trans  &trans  &trans          &kp PSCRN            &kp LEFT          &kp DOWN            &kp RIGHT           &trans
-&trans  &trans  &trans  &trans  &trans  &trans             &tog NUM            &trans            &kp DOWN             &trans           &trans     &trans
+&trans  &trans  &trans  &trans  &trans                                         &trans            &kp HOME             &kp INS           &kp PG_UP  &trans
+&trans  &trans  &trans  &trans  &trans                                         &trans            &kp END              &kp UP            &kp PG_DN  &trans
+&trans  &trans  &trans  &trans  &trans          &kp PSCRN            &kp LEFT          &kp DOWN            &kp RIGHT            &trans
+&trans  &trans  &trans  &trans  &trans  &trans             &tog NUM            &trans            &trans               &kp DOWN          &trans     &trans
                         &trans  &trans  &trans             &trans              &trans
             >;
 
@@ -198,8 +212,8 @@
             bindings = <
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                      &kp F6              &kp F7              &kp F8              &kp F9      &kp F10
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                &trans              &bt BT_CLR          &bt BT_PRV          &bt BT_NXT  &trans
-&trans        &kp LPAR      &kp RPAR      &trans        &sys_reset                 &sys_reset               &trans              &trans              &trans              &trans
-&bt BT_CLR    &kp LBKT      &kp RBKT      &trans        &trans        &bootloader              &bootloader          &trans              &trans              &trans              &trans      &trans
+&trans        &trans        &trans        &trans        &sys_reset                 &sys_reset               &trans              &trans              &trans              &trans
+&bt BT_CLR    &trans        &trans        &trans        &trans        &bootloader              &bootloader          &trans              &trans              &trans              &trans      &trans
                                           &trans        &trans        &trans                   &kp C_PREV           &kp C_NEXT          &trans
             >;
 
