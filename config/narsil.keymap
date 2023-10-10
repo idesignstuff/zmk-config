@@ -101,6 +101,11 @@
             key-positions = <13 12>;
             require-prior-idle-ms = <50>;
         };
+
+        combo_rtc {
+            bindings = <&rcd_macro>;
+            key-positions = <13 14>;
+        };
     };
 };
 
@@ -113,6 +118,12 @@
             label = "RCD_MACRO";
             wait-ms = <30>;
             tap-ms = <50>;
+        };
+        rtc_macro: rtc_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp R &kp I &kp T &kp C &kp H &kp C &kp D>;
+            label = "RTC_MACRO";
         };
     };
 
