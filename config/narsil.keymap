@@ -103,7 +103,7 @@
         };
 
         combo_rtc {
-            bindings = <&rcd_macro>;
+            bindings = <&rtc_macro>;
             key-positions = <13 14>;
         };
     };
