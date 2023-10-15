@@ -1,5 +1,5 @@
 /*
-  * Copyright (c) 2020 The ZMK Contributors
+  * Copyright (c) 2023 The ZMK Contributors
   *
   * SPDX-License-Identifier: MIT
   *
@@ -120,6 +120,11 @@
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <46 47>;
         };
+
+        wes_combo {
+            bindings = <&wes_macro>;
+            key-positions = <11 12>;
+        };
     };
 };
 
@@ -138,6 +143,12 @@
             #binding-cells = <0>;
             bindings = <&none &kp R &kp I &kp T &kp C &kp H &kp C &kp D>;
             label = "RTC_MACRO";
+        };
+        wes_macro: wes_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp W &kp E &kp DOT &kp E &kp A &kp T &kp DOT &kp S &kp P &kp A &kp M &kp A &kp L &kp O &kp T &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "WES_MACRO";
         };
     };
 
