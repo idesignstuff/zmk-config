@@ -160,7 +160,7 @@
                                                 &lt FN ESC      &lt NAV SPACE   &lt NUM TAB       &lt NUM RET  &lt NAV BSPC    &lt FN DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
+            sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         nav_layer {
