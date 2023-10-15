@@ -230,5 +230,19 @@
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp DOWN UP>;
         };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                  &trans          &trans          &trans          &trans  &trans
+&trans  &trans  &trans  &trans  &trans                                  &trans          &trans          &trans          &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans          &trans          &trans          &trans          &trans  &trans
+                        &trans  &trans  &trans          &trans          &trans          &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp LC(Z) LS(LC(Z))>,
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
+        };
     };
 };
