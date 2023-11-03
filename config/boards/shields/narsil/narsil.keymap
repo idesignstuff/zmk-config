@@ -93,37 +93,48 @@
         combo_rcd {
             bindings = <&rcd_macro>;
             key-positions = <12 13>;
-            require-prior-idle-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
         combo_rtc {
             bindings = <&rtc_macro>;
             key-positions = <13 14>;
+            require-prior-idle-ms = <100>;
         };
 
         open_par {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <43 44>;
+            require-prior-idle-ms = <100>;
         };
 
         close_par {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <45 46>;
+            require-prior-idle-ms = <100>;
         };
 
         open_brkt {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <42 43>;
+            require-prior-idle-ms = <100>;
         };
 
         close_brkt {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <46 47>;
+            require-prior-idle-ms = <100>;
         };
 
         wes_combo {
             bindings = <&wes_macro>;
             key-positions = <11 12>;
+            require-prior-idle-ms = <100>;
+        };
+        cdr_combo {
+            bindings = <&cdr_macro>;
+            key-positions = <32 33>;
+            require-prior-idle-ms = <100>;
         };
     };
 };
@@ -135,20 +146,32 @@
             #binding-cells = <0>;
             bindings = <&kp R &kp I &kp T &kp C &kp H &kp I &kp E &kp UNDER &kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp UNDER &kp D &kp AT &kp C &kp A &kp T &kp DOT &kp C &kp O &kp M>;
             label = "RCD_MACRO";
-            wait-ms = <30>;
-            tap-ms = <50>;
+            wait-ms = <5>;
+            tap-ms = <10>;
         };
         rtc_macro: rtc_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp R &kp I &kp T &kp C &kp H &kp C &kp D>;
+            bindings = <&kp R &kp I &kp T &kp C &kp H &kp C &kp D>;
             label = "RTC_MACRO";
+            wait-ms = <5>;
+            tap-ms = <10>;
         };
         wes_macro: wes_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp W &kp E &kp DOT &kp E &kp A &kp T &kp DOT &kp S &kp P &kp A &kp M &kp A &kp L &kp O &kp T &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            bindings = <&kp W &kp E &kp DOT &kp E &kp A &kp T &kp DOT &kp S &kp P &kp A &kp M &kp A &kp L &kp O &kp T &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "WES_MACRO";
+            wait-ms = <5>;
+            tap-ms = <10>;
+        };
+        cdr_macro: cdr_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp DOT &kp D &kp DOT &kp R &kp I &kp T &kp C &kp H &kp I &kp E &KP AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "CDR_MACRO";
+            wait-ms = <5>;
+            tap-ms = <10>;
         };
     };
 
@@ -223,7 +246,7 @@
             bindings = <
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                    &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                              &trans      &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &trans
-&trans        &trans        &trans        &trans        &sys_reset                                &sys_reset  &trans      &trans      &trans      &trans
+&out OUT_TOG  &trans        &trans        &trans        &sys_reset                                &sys_reset  &trans      &trans      &trans      &trans
 &bt BT_CLR    &trans        &trans        &trans        &trans        &bootloader   &bootloader   &trans      &trans      &trans      &trans      &trans
                                           &trans        &trans        &trans        &kp C_PREV    &kp C_NEXT  &trans
             >;
