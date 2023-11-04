@@ -146,32 +146,32 @@
             #binding-cells = <0>;
             bindings = <&kp R &kp I &kp T &kp C &kp H &kp I &kp E &kp UNDER &kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp UNDER &kp D &kp AT &kp C &kp A &kp T &kp DOT &kp C &kp O &kp M>;
             label = "RCD_MACRO";
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <30>;
         };
         rtc_macro: rtc_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp R &kp I &kp T &kp C &kp H &kp C &kp D>;
             label = "RTC_MACRO";
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <30>;
         };
         wes_macro: wes_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp W &kp E &kp DOT &kp E &kp A &kp T &kp DOT &kp S &kp P &kp A &kp M &kp A &kp L &kp O &kp T &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "WES_MACRO";
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <30>;
         };
         cdr_macro: cdr_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp DOT &kp D &kp DOT &kp R &kp I &kp T &kp C &kp H &kp I &kp E &KP AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "CDR_MACRO";
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <30>;
         };
     };
 
@@ -213,7 +213,7 @@
                         &trans  &trans  &trans  &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         num_layer {
@@ -232,7 +232,7 @@
                                           &trans        &trans        &trans          &kp KP_N0  &kp KP_DOT   &kp KP_ENTER
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp DOWN UP>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN >;
         };
 
         fn_layer {
@@ -251,7 +251,7 @@
                                           &trans        &trans        &trans        &kp C_PREV    &kp C_NEXT  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp DOWN UP>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
         };
     };
 };
