@@ -15,9 +15,16 @@
 include:
   - board: rpi_pico
     shield: void9
+    
   - board: seeeduino_xiao_ble
     shield: narsil_left
   - board: seeeduino_xiao_ble
     shield: narsil_right
+    
+  - board: seeeduino_xiao_ble
+    shield: klein_left
+  - board: seeeduino_xiao_ble
+    shield: klein_right
+    
   - board: seeeduino_xiao_ble
     shield: settings_reset
