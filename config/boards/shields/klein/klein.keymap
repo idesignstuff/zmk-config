@@ -141,10 +141,10 @@
             //                      | ESC  | SPC  |  TAB | C/A/D |                            | MUTE |  RET |  BKSP |  DEL |
 
             bindings = <
-      &kp Q       &kp W        &kp E        &kp R        &kp T                       &kp Y        &kp U        &kp I       &kp O   &gqt PSCRN P
- &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F        &kp G                       &kp H  &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt LGUI SQT
-      &kp Z       &kp X        &kp C        &kp V        &kp B                       &kp N        &kp M   &kp COMMA       &kp DOT  &kp FSLH
-              &lt PAD ESC  &lt NAV SPACE  &lt BLU TAB  &gqt &reset LC(LA(DEL))   &gqt &reset C_MUTE    &lt SYM RET  &lt NUM BSPC     &lt PS DEL
+      &kp Q       &kp W        &kp E        &kp R        &kp T                           &kp Y        &kp U        &kp I       &kp O   &gqt PSCRN P
+ &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F        &kp G                           &kp H  &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt LGUI SQT
+      &kp Z       &kp X        &kp C        &kp V        &kp B                           &kp N        &kp M   &kp COMMA       &kp DOT  &kp FSLH
+    &lt PAD ESC  &lt NAV SPACE  &lt BLU TAB  &gqt &sys_reset LC(LA(DEL))   &gqt &sys_reset C_MUTE    &lt SYM RET  &lt NUM BSPC     &lt PS DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -165,10 +165,10 @@
         num_layer {
             label = " #12345";
             bindings = <
-  &kp LBKT  &kp N7  &kp N8      &kp N9   &kp RBKT                  &trans       &trans     &trans    &trans    &trans
-  &kp SEMI  &kp N4  &kp N5      &kp N6  &kp EQUAL                  &trans    &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
- &kp GRAVE  &kp N1  &kp N2      &kp N3   &kp BSLH                               &trans     &trans    &trans    &trans  &trans
-                            &kp PERIOD     &kp N0  &kp MINUS  &bootloader  &bootloader     &trans    &trans    &trans
+  &kp LBKT  &kp N7  &kp N8      &kp N9   &kp RBKT                               &trans        &trans     &trans     &trans    &trans
+  &kp SEMI  &kp N4  &kp N5      &kp N6  &kp EQUAL                               &trans        &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+ &kp GRAVE  &kp N1  &kp N2      &kp N3   &kp BSLH                               &trans        &trans     &trans     &trans    G&trans
+                 &kp PERIOD     &kp N0  &kp MINUS  &bootloader  &bootloader     &trans        &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -177,7 +177,7 @@
         fun_layer {
             label = " FUNC";
             bindings = <
- &kp F12  &kp F7  &kp F8   &kp F9        &reset                                &reset       &trans     &trans    &trans  &bl BL_INC
+ &kp F12  &kp F7  &kp F8   &kp F9       &sys_reset                             &sys_reset   &trans     &trans    &trans  &bl BL_INC
  &kp F11  &kp F4  &kp F5   &kp F6       &kp SYSREQ                             &trans    &kp LSHFT  &kp LCTRL  &kp LALT  &bl BL_DEC
  &kp F10  &kp F1  &kp F2   &kp F3  &kp PAUSE_BREAK                             &trans       &trans     &trans    &trans  &bl BL_TOG 
                           &kp ESC        &kp SPACE  &kp TAB  &bootloader  &bootloader       &trans     &trans    &trans
