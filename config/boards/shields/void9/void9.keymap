@@ -68,6 +68,7 @@
             label = "WES_MACRO";
         };
     };
+  };
 / {
     keymap {
         compatible = "zmk,keymap";
