@@ -35,7 +35,6 @@
                 key-positions = <0 1>;
                 require-prior-idle-ms = <50>;
               };
-
               combo_rtc {
                 bindings = <&rtc_macro>;
                 key-positions = <1 2>;
@@ -45,6 +44,7 @@
                 key-positions = <5 8>;
               };
     };
+  };
 / {
     macros {
         rcd_macro: rcd_macro {
