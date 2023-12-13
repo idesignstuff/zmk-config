@@ -30,9 +30,44 @@
                 key-positions = <6 8>;
                 layers = <0 1 2>;
               };
-          };
-    };
+              combo_rcd {
+                bindings = <&rcd_macro>;
+                key-positions = <0 1>;
+                require-prior-idle-ms = <50>;
+              };
 
+              combo_rtc {
+                bindings = <&rtc_macro>;
+                key-positions = <1 2>;
+              };
+              wes_combo {
+                bindings = <&wes_macro>;
+                key-positions = 5 8>;
+              };
+    };
+/ {
+    macros {
+        rcd_macro: rcd_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp I &kp T &kp C &kp H &kp I &kp E &kp UNDER &kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp UNDER &kp D &kp AT &kp C &kp A &kp T &kp DOT &kp C &kp O &kp M>;
+            label = "RCD_MACRO";
+            wait-ms = <30>;
+            tap-ms = <50>;
+        };
+        rtc_macro: rtc_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp R &kp I &kp T &kp C &kp H &kp C &kp D>;
+            label = "RTC_MACRO";
+        };
+        wes_macro: wes_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp W &kp E &kp DOT &kp E &kp A &kp T &kp DOT &kp S &kp P &kp A &kp M &kp A &kp L &kp O &kp T &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "WES_MACRO";
+        };
+    };
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -51,7 +86,7 @@
                         &kp LCTRL   &kp LALT          &kp SPACE
                         >;
 
-              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP >;
             };
 
             middle_layer {
@@ -68,7 +103,7 @@
                         &kp LCTRL   &kp LALT          &kp SPACE
                         >;
 
-              sensor-bindings = <&inc_dec_kp UP DOWN>;
+              sensor-bindings = <&inc_dec_kp DOWN UP>;
             };
 
         bottom_layer {
