@@ -42,7 +42,7 @@
               };
               wes_combo {
                 bindings = <&wes_macro>;
-                key-positions = 5 8>;
+                key-positions = <5 8>;
               };
     };
 / {
