@@ -32,7 +32,6 @@
 / {
     macros {
         degree_sym: degree_sym {
-            label = "Degree_symbol";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -50,7 +49,6 @@
         };
         C_A_D: C_A_D {
             compatible = "zmk,behavior-macro";
-            label = "Control Alt Delete";
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
@@ -63,7 +61,6 @@
         };
         TM: TM {
             compatible = "zmk,behavior-macro";
-            label = "TradeMark";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
@@ -78,7 +75,6 @@
         };
         CircleR: CircleR {
             compatible = "zmk,behavior-macro";
-            label = "CircleR";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
@@ -109,7 +105,6 @@
     behaviors {
         pht: positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "POSITIONAL_HOLD_TAP";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <400>;
@@ -119,8 +114,7 @@
         };
         gqt: global-quick-tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "GLOBAL_QUICK_TAP";
-            #binding-cells = <2>;
+            l#binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
@@ -133,7 +127,6 @@
         compatible = "zmk,keymap";
 
         default_layer {
-        label = " QWERTY";
             //          ------------------------------------------------------------------------------------------------------------
             //          |  Q  |  W  |  E   |  R   |  T   |                                           |  Y   |  U    |  I    |  O   |   P   |
             //          |  A  |  S  |  D   |  F   |  G   |                                           |  H   |  J    |  K    |  L   |   '   |
@@ -151,8 +144,7 @@
         };
 
         nav_layer {
-            label = " NAV";
-            bindings = <
+             bindings = <
     &trans    &trans     &trans     &trans  &trans             &kp CAPS    &bt BT_NXT  &kp LC(X)  &kp LC(C)  &kp LC(V)
   &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans             &kp LEFT      &kp DOWN     &kp UP   &kp RIGHT       &trans
  &kp LSHFT    &trans  &kp LC(L)     &trans  &C_A_D           &kp INSERT      &kp HOME  &kp PG_UP   &kp PG_DN      &kp END
@@ -163,7 +155,6 @@
             };
 
         num_layer {
-            label = " #12345";
             bindings = <
   &kp LBKT  &kp N7  &kp N8      &kp N9   &kp RBKT                               &trans        &trans     &trans     &trans    &trans
   &kp SEMI  &kp N4  &kp N5      &kp N6  &kp EQUAL                               &trans        &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
@@ -175,7 +166,6 @@
         };
 
         fun_layer {
-            label = " FUNC";
             bindings = <
  &kp F12  &kp F7  &kp F8   &kp F9       &sys_reset                             &sys_reset   &trans     &trans    &trans  &trans
  &kp F11  &kp F4  &kp F5   &kp F6       &kp SYSREQ                             &trans    &kp LSHFT  &kp LCTRL  &kp LALT  &trans
@@ -187,7 +177,6 @@
         };
 
         sym_layer {
-            label = " !@#%&#";
             bindings = <
   &kp LS(LBKT)  &kp LS(N7)  &kp LS(N8)      &kp LS(N9)   &kp LS(RBKT)                 &degree_sym       &trans     &trans    &trans    &trans
   &kp LS(SEMI)  &kp LS(N4)  &kp LS(N5)      &kp LS(N6)  &kp LS(EQUAL)                           &TM    &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
@@ -199,7 +188,6 @@
         };
 
         PS_LAYER {
-            label = " PhotoShop";
             bindings = <
    &kp LALT    &kp W       &kp E        &kp R        &kp T               &trans        &trans        &trans      &trans      &trans
    &kp LSHFT   &kp S       &kp D        &kp F        &kp G               &kp K_PREV  &kp K_VOL_DN  &kp K_VOL_UP  &kp K_NEXT      &trans
@@ -211,7 +199,6 @@
         };
 
         blu_layer {
-            label = " BT";
             bindings = <
  &trans        &trans        &trans        &trans  &trans                           &bt BT_CLR      &trans      &trans  &trans  &out OUT_TOG
  &trans  &bt BT_SEL 3  &bt BT_SEL 4        &trans  &trans                               &trans  &bt BT_PRV  &bt BT_NXT  &trans    &trans
@@ -223,7 +210,6 @@
         };
 
         PAD_LAYER {
-            label = " NUMPAD";
             bindings = <
    &trans    &trans     &trans     &trans  &trans                            &kp KP_N7     &kp KP_N8   &kp KP_N9   &kp KP_PLUS  &kp KP_MULTIPLY
  &kp LWIN  &kp LALT  &kp LCTRL  &kp LSHFT  &trans                            &kp KP_N4     &kp KP_N5   &kp KP_N6  &kp KP_MINUS  &kp KP_DIVIDE
