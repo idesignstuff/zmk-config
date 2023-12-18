@@ -39,7 +39,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(4,4)    	RC(4,5)	RC(3,5) RC(3,6) RC(3
 	    = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //&gpio1 13
             , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
 		
@@ -49,7 +49,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(4,4)    	RC(4,5)	RC(3,5) RC(3,6) RC(3
         	label = "LEFT_ENCODER";
         	a-gpios = <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         	b-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        	steps = <80>;
+        	steps = <10>;
             status = "disabled";
     	    };
 
@@ -58,7 +58,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(4,4)    	RC(4,5)	RC(3,5) RC(3,6) RC(3
 			label = "RIGHT_ENCODER";
 			a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 			b-gpios = <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-			steps = <20>;
+			steps = <10>;
         	status = "disabled";
              };
 
