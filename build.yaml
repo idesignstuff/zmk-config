@@ -13,13 +13,14 @@
 #
 ---
 include:
+
   - board: rpi_pico
     shield: void9
     
   - board: seeeduino_xiao_ble
-    shield: narsil_left
+    shield: narsil_left rgbled_adapter
   - board: seeeduino_xiao_ble
-    shield: narsil_right
+    shield: narsil_right rgbled_adapter
     
   - board: seeeduino_xiao_ble
     shield: klein_left
@@ -28,3 +29,6 @@ include:
     
   - board: seeeduino_xiao_ble
     shield: settings_reset
+# from Caksoylar LED
+  - board: seeeduino_xiao_ble
+    shield: hummingbird rgbled_adapter
