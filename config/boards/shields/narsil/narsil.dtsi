@@ -37,7 +37,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(4,4)    	RC(4,5)	RC(3,5) RC(3,6) RC(3
 		diode-direction = "col2row";
 	row-gpios
 	    = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //&gpio0 9
             , <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -50,8 +50,8 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(4,4)    	RC(4,5)	RC(3,5) RC(3,6) RC(3
         	a-gpios = <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         	b-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         	steps = <40>;
-            status = "disabled";
-    	    };
+          status = "disabled";
+    	      };
 
 		right_encoder: encoder_right {
         	compatible = "alps,ec11";
@@ -59,7 +59,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(4,4)    	RC(4,5)	RC(3,5) RC(3,6) RC(3
 			a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 			b-gpios = <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 			steps = <40>;
-        	status = "disabled";
+     	status = "disabled";
              };
 
 	sensors {
