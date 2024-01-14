@@ -255,3 +255,7 @@
         };
     };
 };
+// disable qspi flash for more power saving
+&qspi { 
+      status = "disabled"; 
+      };
