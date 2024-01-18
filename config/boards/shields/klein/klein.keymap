@@ -120,10 +120,10 @@
             //                      | ESC  | SPC  |  TAB | C/A/D |                            | MUTE |  SPC |  BKSP |  DEL |
 
             bindings = <
-&kp Q      &kp W      &kp E      &kp R     &kp T                            &kp Y            &kp U        &kp I       &kp O      &kp P
-&kp A      &kp S      &kp D      &kp F     &kp G                            &kp H            &kp J        &kp K       &kp L      &kp SQT
-&kp Z      &kp X      &kp C      &kp V     &kp B                            &kp N            &kp M        &kp COMMA   &kp DOT    &kp FSLH
-            &mt LALT ESCAPE  &mt LGUI SPACE  &mt LCTRL TAB    &kp ENTER     &lt 1 SPACE      &lt 2 BSPC
+&kp Q      &kp W      &kp E      &kp R     &kp T                                                              &kp Y            &kp U        &kp I       &kp O      &kp P
+&kp A      &kp S      &kp D      &kp F     &kp G                                                              &kp H            &kp J        &kp K       &kp L      &kp SQT
+&kp Z      &kp X      &kp C      &kp V     &kp B                                                              &kp N            &kp M        &kp COMMA   &kp DOT    &kp FSLH
+            &mt LALT ESCAPE  &mt LGUI SPACE  &mt LCTRL TAB  &kp LC(LA(DEL))         &kp C_MUTE  &kp ENTER     &lt 1 SPACE      &lt 2 BSPC
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
