@@ -169,7 +169,7 @@
         cdr_macro: cdr_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp DOT &kp D &kp DOT &kp R &kp I &kp T &kp C &kp H &kp I &kp E &KP AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            bindings = <&kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp DOT &kp D &kp DOT &kp R &kp I &kp T &kp C &kp H &kp I &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "CDR_MACRO";
             wait-ms = <30>;
             tap-ms = <30>;
@@ -226,11 +226,11 @@
             //                         | trans | trans| trans |  |    0  | .     | ENTER   | 
 
             bindings = <
-&trans        &trans        &trans        &trans        &trans                                   &kp LS(N9)   &kp KP_EQUAL   &kp LS(N9)  &kp LS(N0)  &kp KP_SLASH
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &kp LS(N0)   &kp KP_N7      &kp KP_N8   &kp KP_N9   &kp KP_MINUS
-&trans        &trans        &trans        &trans        &trans                                   &trans       &kp KP_N4      &kp KP_N5   &kp KP_N6   &kp KP_PLUS
-&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &trans     &trans       &kp KP_N1      &kp KP_N2   &kp KP_N3   &kp KP_ASTERISK
-                                          &trans        &trans        &trans          &kp KP_N0  &kp KP_DOT   &kp KP_ENTER
+&trans        &trans        &trans        &trans        &trans                                   &kp LS(N9)   &kp kp_EQUAL   &kp LS(N9)  &kp LS(N0)  &kp kp_SLASH
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &kp LS(N0)   &kp kp_N7      &kp kp_N8   &kp kp_N9   &kp kp_MINUS
+&trans        &trans        &trans        &trans        &trans                                   &trans       &kp kp_N4      &kp kp_N5   &kp kp_N6   &kp kp_PLUS
+&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &trans     &trans       &kp kp_N1      &kp kp_N2   &kp kp_N3   &kp kp_ASTERISK
+                                          &trans        &trans        &trans          &kp kp_N0  &kp kp_DOT   &kp kp_ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN >;
