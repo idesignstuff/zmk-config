@@ -36,6 +36,7 @@
             wait-ms = <100>;
         };
      };
+ };
 / {
     combos {
         compatible = "zmk,combos";
