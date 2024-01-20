@@ -198,7 +198,7 @@ z /*
 
             sensor-bindings =
                 <&inc_dec_kp UP_ARROW DOWN_ARROW>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         num_layer {
@@ -216,7 +216,7 @@ z /*
                            &trans  &trans  &trans             &trans             &trans              &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
         layer_2 {
