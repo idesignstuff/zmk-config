@@ -196,7 +196,9 @@ z /*
                                 &mt LEFT_ALT ESC  &mt LGUI SPACE  &mt LCTRL TAB         &kp RET         &lt 1 SPACE             &lt 2 BACKSPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings =
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>,
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         num_layer {
