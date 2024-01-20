@@ -1,0 +1,262 @@
+z /*
+  * Copyright (c) 2023 The ZMK Contributors
+  *
+  * SPDX-License-Identifier: MIT
+  *
+  */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// #include <dt-bindings/zmk/dynamic-macros.h>
+
+#define DEFAULT 0
+#define NAV     1
+#define FN      2
+#define NUM     3
+
+&mt {
+    quick-tap-ms = <100>;
+    global-quick-tap;
+    flavor = "tap-preferred";
+    tapping-term-ms = <180>;
+};
+
+/ {
+    behaviors {
+        pht: positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <1>;    // <---[[the W key]]
+        };
+        gqt: global-quick-tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "GLOBAL_QUICK_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+};
+
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+
+    /delete-property/ ignore-modifiers;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <0 1>;
+            layers = <0>;
+        };
+
+        combo_capslock {
+            bindings = <&caps_word>;
+            key-positions = <23 26>;
+            layers = <0>;
+        };
+
+        combo_hyphen {
+            bindings = <&kp MINUS>;
+            key-positions = <8 9>;
+            layers = <0>;
+        };
+
+        combo_equals {
+            bindings = <&kp EQUAL>;
+            key-positions = <18 19>;
+            layers = <0>;
+        };
+
+        combo_backslash {
+            bindings = <&kp BSLH>;
+            key-positions = <38 39>;
+            layers = <0>;
+        };
+
+        combo_rcd {
+            bindings = <&rcd_macro>;
+            key-positions = <12 13>;
+            require-prior-idle-ms = <100>;
+        };
+
+        combo_rtc {
+            bindings = <&rtc_macro>;
+            key-positions = <13 14>;
+            require-prior-idle-ms = <100>;
+        };
+
+        open_par {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <43 44>;
+            require-prior-idle-ms = <100>;
+        };
+
+        close_par {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <45 46>;
+            require-prior-idle-ms = <100>;
+        };
+
+        open_brkt {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <42 43>;
+            require-prior-idle-ms = <100>;
+        };
+
+        close_brkt {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <46 47>;
+            require-prior-idle-ms = <100>;
+        };
+
+        wes_combo {
+            bindings = <&wes_macro>;
+            key-positions = <11 12>;
+            require-prior-idle-ms = <100>;
+        };
+        cdr_combo {
+            bindings = <&cdr_macro>;
+            key-positions = <32 33>;
+            require-prior-idle-ms = <100>;
+        };
+    };
+};
+
+/ {
+    macros {
+        rcd_macro: rcd_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp I &kp T &kp C &kp H &kp I &kp E &kp UNDER &kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp UNDER &kp D &kp AT &kp C &kp A &kp T &kp DOT &kp C &kp O &kp M>;
+            label = "RCD_MACRO";
+            wait-ms = <30>;
+            tap-ms = <30>;
+        };
+        rtc_macro: rtc_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp I &kp T &kp C &kp H &kp C &kp D>;
+            label = "RTC_MACRO";
+            wait-ms = <30>;
+            tap-ms = <30>;
+        };
+        wes_macro: wes_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp E &kp DOT &kp E &kp A &kp T &kp DOT &kp S &kp P &kp A &kp M &kp A &kp L &kp O &kp T &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "WES_MACRO";
+            wait-ms = <30>;
+            tap-ms = <30>;
+        };
+        cdr_macro: cdr_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp DOT &kp D &kp DOT &kp R &kp I &kp T &kp C &kp H &kp I &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "CDR_MACRO";
+            wait-ms = <30>;
+            tap-ms = <30>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // -------------------------------------------------------------------------------------------------
+            // | 1     | 2    | 3    | 4   | 5   |                               | 6   | 7   | 8   | 9   | 0   |
+            // | Q     | W    | E    | R   | T   |                               | Y   | U   | I   | O   | P   |
+            // | A     | S    | D    | F   | G   |                               | H   | J   | K   | L   | ;   |
+            // | Z     | X    | C    | V   | B   |  C/A/D  |            |  MUTE  | N   | M   | ,   | .   | /   |
+            //                     | FN/ESC|NAV/SPACE|NUM/TAB|      |NUM/ENTER|NAV/BSPACE|FN/DEL |
+
+            bindings = <
+&gqt LS(N1) N1  &gqt LS(N2) N2  &gqt LS(N3) N3  &gqt LS(N4) N4  &gqt LS(N5) N5                                 &gqt LS(N6) N6  &gqt LS(N7) N7  &gqt LS(N8) N8   &gqt LS(N9) N9     &gqt LS(N0) N0
+&kp Q           &kp W           &kp E           &kp R           &kp T                                          &kp Y           &kp U           &kp I            &kp O              &gqt PSCRN P
+&kp A           &mt LALT S      &mt LCTRL D     &mt LSHFT F     &kp G                                          &kp H           &mt RSHFT J     &mt RCTRL K      &mt RALT L         &mt LGUI SQT
+&kp Z           &kp X           &kp C           &kp V           &kp B           &kp LC(LA(DEL))   &kp C_MUTE   &kp N           &kp M           &gqt SEMI COMMA  &gqt LS(SEMI) DOT  &gqt LS(FSLH) FSLH
+                                                &lt FN ESC      &lt NAV SPACE   &lt NUM TAB       &lt NUM RET  &lt NAV BSPC    &lt FN DEL
+            >;
+
+            sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        nav_layer {
+            // -------------------------------------------------------------------------------------------------
+            // | none  | none  | none  | none  | none |                  | none  | HOME | INS  | PG_UP | none  | 
+            // | none  | none  | none  | none  | none |                  | none  | END  | UP   | PG_DN | none  | 
+            // | none  | none  | none  | none  | none |                  | PSCRN | LEFT | DOWN | RIGHT | none  | 
+            // | none  | none  | none  | none  | none | trans |  | trans | none  | none | none | none  | none  | 
+            //                         | trans | trans| trans |  | trans | trans | trans|      
+
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                     &trans     &kp HOME  &kp INS   &kp PG_UP  &trans
+&trans  &trans  &trans  &trans  &trans                     &trans     &kp END   &kp UP    &kp PG_DN  &trans
+&trans  &trans  &trans  &trans  &trans                     &kp PSCRN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &tog NUM   &trans     &trans    &kp DOWN  &trans     &trans
+                        &trans  &trans  &trans  &trans     &trans     &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        num_layer {
+            // -------------------------------------------------------------------------------------------------
+            //  | none | none  | none  | none  | none |                  | (     | 	 =     | (   |   ) | /  | 
+            //  | BT0  | BT1   | BT2   | BT3   | BT4  |                  |     ) |    7    | 8   | 9   | -  | 
+            //  | none | none  | none  | none  | none |                  | none  |    4    | 5   | 6   | +  | 
+            //  |BT_CLR| none  | none  | none  | none | trans |  | trans | none  |    1    | 2   | 3   | *  | 
+            //                         | trans | trans| trans |  |    0  | .     | ENTER   | 
+
+            bindings = <
+&trans        &trans        &trans        &trans        &trans                                   &trans       &kp kp_EQUAL   &kp LS(N9)  &kp LS(N0)  &kp kp_SLASH
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &trans       &kp kp_N7      &kp kp_N8   &kp kp_N9   &kp kp_MINUS
+&trans        &trans        &trans        &trans        &trans                                   &trans       &kp kp_N4      &kp kp_N5   &kp kp_N6   &kp kp_PLUS
+&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &trans     &trans       &kp kp_N1      &kp kp_N2   &kp kp_N3   &kp kp_ASTERISK
+                                          &trans        &trans        &trans          &kp kp_N0  &kp kp_DOT   &kp kp_ENTER
+            >;
+
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN >;
+        };
+
+        fn_layer {
+            // ---------------------------------------------------------------------------------------------------------------------
+            // | F1     | F2      | F3      | F4      | F5       |                      | F6    | F7     | F8     | F9      | F10  |
+            // |BT_SEL 0| BT_SEL 1| BT_SEL 2| BT_SEL 3| BT_SEL 4 |                      | none  | BT_CLR | BT_PRV | BT_NXT  | none |
+            // | OUT_TOG|    (    |    )    | none    | reset    |                      | reset | none   | none   | none    | none |
+            // |BT_CLR  |    [    |    ]    | none    | trans    |bootloader||bootloader| none  | none   | none   | none    | MacroCORD? |
+            //                              | trans   | trans    |   trans  ||  trans   | trans | trans  | 
+
+            bindings = <
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                    &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                              &trans      &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &trans
+&out OUT_TOG  &trans        &trans        &trans        &sys_reset                                &sys_reset  &trans      &trans      &trans      &trans
+&bt BT_CLR    &trans        &trans        &trans        &trans        &bootloader   &bootloader   &trans      &trans      &trans      &trans      &trans
+                                          &trans        &trans        &trans        &kp C_PREV    &kp C_NEXT  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
+        };
+    };
+};
+// disable qspi flash for more power saving
+&qspi { 
+      status = "disabled"; 
+      };
