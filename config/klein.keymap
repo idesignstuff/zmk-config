@@ -190,10 +190,10 @@ z /*
             //                     | FN/ESC|NAV/SPACE|NUM/TAB|      |NUM/ENTER|NAV/BSPACE|FN/DEL |
 
             bindings = <
-&kp Q  &kp W  &kp E  &kp R             &kp T                                                 &kp Y                   &kp U                     &kp I            &kp O  &kp P
-&kp A  &kp S  &kp D  &kp F             &kp G                                                 &kp H                   &kp J                     &kp K            &kp L  &kp SQT
-&kp Z  &kp X  &kp C  &kp V             &kp B                          &kp N           &kp M               &kp COMMA                   &kp DOT         &kp FSLH
-                     &mt LEFT_ALT ESC  &mt LGUI SPACE  &mt LCTRL TAB         &kp RET         &lt 1 SPACE             &lt 2 BACKSPACE
+&kp Q             &kp W  &kp E  &kp R             &kp T                                                 &kp Y                   &kp U                     &kp I                   &kp O  &kp P
+&kp A             &kp S  &kp D  &kp F             &kp G                                                 &kp H                   &kp J                     &kp K                   &kp L  &kp SQT
+&mt LEFT_SHIFT Z  &kp X  &kp C  &kp V             &kp B                          &kp N           &kp M               &kp COMMA                   &kp DOT         &mt RSHIFT BSLH
+                                &mt LEFT_ALT ESC  &mt LGUI SPACE  &mt LCTRL TAB         &kp RET         &lt 1 SPACE             &lt 2 BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
