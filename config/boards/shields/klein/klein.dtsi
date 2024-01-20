@@ -38,7 +38,8 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3)  				 RC(3,6) RC(3,7) RC(3,8) RC(3,9)
             ;
 	};
 
-	left_encoder: encoder_left {
+
+left_encoder: encoder_left {
         compatible = "alps,ec11";
         label = "LEFT_ENCODER";
         a-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -57,8 +58,9 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3)  				 RC(3,6) RC(3,7) RC(3,8) RC(3,9)
 	};
 	
 	sensors {
-		compatible = "zmk,keymap-sensors";
-		sensors = <&left_encoder &right_encoder>;
-	};
+        	compatible = "zmk,keymap-sensors";
+        	sensors = <&left_encoder &right_encoder>;
+        	triggers-per-rotation = <40>;
+    		};
 };
 
