@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>p
 
 #define BASE 0
 #define NUM  1
@@ -22,23 +23,6 @@
 
 / {
     macros {
-        degree_sym: degree_sym {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap_time 40>,
-                <&macro_wait_time 40>,
-                <&macro_press>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp N2 &kp N4 &kp N8>,
-                <&macro_pause_for_release>,
-                <&macro_release>;
-
-            tap-ms = <40>;
-            wait-ms = <40>;
-        };
-
         C_A_D: C_A_D {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -51,38 +35,6 @@
             tap-ms = <100>;
             wait-ms = <100>;
         };
-
-        TM: TM {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp N0 &kp N1 &kp N5 &kp N3>,
-                <&macro_pause_for_release>,
-                <&macro_release>;
-
-            tap-ms = <40>;
-            wait-ms = <40>;
-        };
-
-        CircleR: CircleR {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp KP_N1 &kp KP_N6 &kp KP_N9>,
-                <&macro_release>,
-                <&macro_release>;
-
-            tap-ms = <40>;
-            wait-ms = <40>;
-        };
-    };
-};
 
 / {
     combos {
@@ -120,10 +72,10 @@
             //                      | ESC  | SPC  |  TAB | C/A/D |                            | MUTE |  SPC |  BKSP |  DEL |
 
             bindings = <
-&kp Q        &kp W           &kp E          &kp R           &kp T                                       &kp Y        &kp U        &kp I         &kp O            &kp P
-&kp A        &kp S           &kp D          &kp F           &kp G                                       &kp H        &kp J        &kp K         &kp L            &kp SQT
-&mt LSHIFT Z &kp X           &kp C          &kp V           &kp B                                       &kp N        &kp M        &kp COMMA     &kp DOT   &MT RSHIFT FSLH
-&mt LALT ESC   &mt LGUI SPACE  &mt LCTRL TAB                                              &kp ENTER  &lt 1 SPACE &lt 2 BSPC &kp LC(LA(DEL)) &kp LC(LA(DEL))    &kp C_MUTE 
+&kp Q            &kp W           &kp E          &kp R           &kp T                                       &kp Y        &kp U        &kp I         &kp O            &kp P
+&kp A            &kp S           &kp D          &kp F           &kp G                                       &kp H        &kp J        &kp K         &kp L            &kp SQT
+&mt LSHIFT Z     &kp X           &kp C          &kp V           &kp B                                       &kp N        &kp M        &kp COMMA     &kp DOT   &MT RSHIFT FSLH
+&mt LALT ESC     &mt LGUI SPACE  &mt LCTRL TAB                                              &kp ENTER  &lt 1 SPACE &lt 2 BSPC &kp LC(LA(DEL)) &kp LC(LA(DEL))    &kp C_MUTE 
                         >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
