@@ -30,6 +30,3 @@ include:
   - board: seeeduino_xiao_ble
     shield: settings_reset
     
-# from Caksoylar LED
-#  - board: seeeduino_xiao_ble
-#    shield: hummingbird rgbled_adapter
