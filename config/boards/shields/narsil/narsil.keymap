@@ -226,11 +226,11 @@
             //                         | trans | trans| trans |  |    0  | .     | ENTER   | 
 
             bindings = <
-&trans        &trans        &trans        &trans        &trans                                   &trans       &kp kp_EQUAL   &kp LS(N9)  &kp LS(N0)  &kp kp_SLASH
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &trans       &kp kp_N7      &kp kp_N8   &kp kp_N9   &kp kp_MINUS
-&trans        &trans        &trans        &trans        &trans                                   &trans       &kp kp_N4      &kp kp_N5   &kp kp_N6   &kp kp_PLUS
-&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &trans     &trans       &kp kp_N1      &kp kp_N2   &kp kp_N3   &kp kp_ASTERISK
-                                          &trans        &trans        &trans          &kp kp_N0  &kp kp_DOT   &kp kp_ENTER
+&trans        &trans        &trans        &trans        &trans                                   &trans       &kp KP_EQUAL   &kp LS(N9)  &kp LS(N0)  &kp KP_SLASH
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &trans       &kp KP_N7      &kp KP_N8   &kp KP_N9   &kp KP_MINUS
+&trans        &trans        &trans        &trans        &trans                                   &trans       &kp KP_N4      &kp KP_N5   &kp KP_N6   &kp KP_PLUS
+&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &trans     &trans       &kp KP_N1      &kp KP_N2   &kp KP_N3   &kp KP_ASTERISK
+                                          &trans        &trans        &trans          &kp KP_N0  &kp KP_DOT   &kp KP_ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN >;
@@ -241,7 +241,7 @@
             // | F1     | F2      | F3      | F4      | F5       |                      | F6    | F7     | F8     | F9      | F10  |
             // |BT_SEL 0| BT_SEL 1| BT_SEL 2| BT_SEL 3| BT_SEL 4 |                      | none  | BT_CLR | BT_PRV | BT_NXT  | none |
             // | OUT_TOG|    (    |    )    | none    | reset    |                      | reset | none   | none   | none    | none |
-            // |BT_CLR  |    [    |    ]    | none    | trans    |bootloader||bootloader| none  | none   | none   | none    | MacroCORD? |
+            // |BT_CLR  |    [    |    ]    | none    | trans    |bootloader||bootloader| none  | none   | none   | none    | none |
             //                              | trans   | trans    |   trans  ||  trans   | trans | trans  | 
 
             bindings = <
