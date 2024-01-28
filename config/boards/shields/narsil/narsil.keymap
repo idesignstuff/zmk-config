@@ -36,8 +36,8 @@
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <1>;    // <---[[the W key]]
-        };
-    rpi: require_prior_idle {
+            };
+       rpi: require_prior_idle {
          compatible = "zmk,behavior-hold-tap";
          #binding-cells = <2>;
          flavor = "tap-preferred";
@@ -45,7 +45,7 @@
          quick-tap-ms = <200>;
          require-prior-idle-ms = <125>;
          bindings = <&kp>, <&kp>;
-};
+         };
     };
 };
 
@@ -190,7 +190,7 @@
 &rpi LS(N1) N1  &rpi LS(N2) N2  &rpi LS(N3) N3  &rpi LS(N4) N4  &rpi LS(N5) N5                                 &rpi LS(N6) N6  &rpi LS(N7) N7  &rpi LS(N8) N8   &rpi LS(N9) N9     &rpi LS(N0) N0
 &kp Q           &kp W           &kp E           &kp R           &kp T                                          &kp Y           &kp U           &kp I            &kp O              &rpi PSCRN P
 &kp A           &mt LALT S      &mt LCTRL D     &mt LSHFT F     &kp G                                          &kp H           &mt RSHFT J     &mt RCTRL K      &mt RALT L         &mt LGUI SQT
-&kp Z           &kp X           &kp C           &kp V           &kp B           &kp LC(LA(DEL))   &kp C_MUTE   &kp N           &kp M           &rpi SEMI COMMA  &rpi LS(SEMI) DOT  &rpi LS(FSLH) FSLH
+&rpi LC(Z) Z    &rpi LC(X) X    &rpi LC(C) C    &rpi LC(V) V    &kp B           &kp LC(LA(DEL))   &kp C_MUTE   &kp N           &kp M           &rpi SEMI COMMA  &rpi LS(SEMI) DOT  &rpi LS(FSLH) FSLH
                                                 &lt FN ESC      &lt NAV SPACE   &lt NUM TAB       &lt NUM RET  &lt NAV BSPC    &lt FN DEL
             >;
 
