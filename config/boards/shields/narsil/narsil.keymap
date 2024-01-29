@@ -19,9 +19,13 @@
 
 &mt {
     quick-tap-ms = <100>;
-   
     flavor = "tap-preferred";
     tapping-term-ms = <150>;
+};
+
+&lt {
+    quick-tap-ms = <100>;
+    tapping-term-ms = <200>;
 };
 
 / {
@@ -46,18 +50,21 @@
          require-prior-idle-ms = <125>;
          bindings = <&kp>, <&kp>;
          };
+
       td_sp: tap_dance_mod_tap_spc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&lt NAV SPACE>, <&kp SPACE>;
         };
+
       td_bs: tap_dance_mod_tap_bs {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&lt NAV BSPC>, <&kp BSPC>;
         };
+
       td_dl: tap_dance_mod_tap_del {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
