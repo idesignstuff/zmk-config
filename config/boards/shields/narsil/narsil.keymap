@@ -88,43 +88,48 @@
         combo_grave {
             bindings = <&kp GRAVE>;
             key-positions = <0 1>;
+            require-prior-idle-ms = <100>;
             layers = <0>;
         };
 
         combo_capslock {
             bindings = <&caps_word>;
             key-positions = <23 26>;
+            require-prior-idle-ms = <100>;
             layers = <0>;
         };
 
         combo_hyphen {
             bindings = <&kp MINUS>;
             key-positions = <8 9>;
+            require-prior-idle-ms = <100>;
             layers = <0>;
         };
 
         combo_equals {
             bindings = <&kp EQUAL>;
             key-positions = <18 19>;
+            require-prior-idle-ms = <100>;
             layers = <0>;
         };
 
         combo_backslash {
             bindings = <&kp BSLH>;
             key-positions = <38 39>;
+            require-prior-idle-ms = <100>;
             layers = <0>;
         };
 
         combo_rcd {
             bindings = <&rcd_macro>;
             key-positions = <12 13>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <25>;
         };
 
         combo_rtc {
             bindings = <&rtc_macro>;
             key-positions = <13 14>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <25>;
         };
 
         open_par {
@@ -154,12 +159,12 @@
         wes_combo {
             bindings = <&wes_macro>;
             key-positions = <11 12>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <25>;
         };
         cdr_combo {
             bindings = <&cdr_macro>;
             key-positions = <32 33>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <25>;
         };
     };
 };
@@ -171,7 +176,7 @@
             #binding-cells = <0>;
             bindings = <&kp R &kp I &kp T &kp C &kp H &kp I &kp E &kp UNDER &kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp UNDER &kp D &kp AT &kp C &kp A &kp T &kp DOT &kp C &kp O &kp M>;
             label = "RCD_MACRO";
-            wait-ms = <5>;
+            wait-ms = <10>;
             tap-ms = <10>;
         };
         rtc_macro: rtc_macro {
@@ -179,7 +184,7 @@
             #binding-cells = <0>;
             bindings = <&kp R &kp I &kp T &kp C &kp H &kp C &kp D>;
             label = "RTC_MACRO";
-            wait-ms = <5>;
+            wait-ms = <10>;
             tap-ms = <10>;
         };
         wes_macro: wes_macro {
@@ -187,7 +192,7 @@
             #binding-cells = <0>;
             bindings = <&kp W &kp E &kp DOT &kp E &kp A &kp T &kp DOT &kp S &kp P &kp A &kp M &kp A &kp L &kp O &kp T &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "WES_MACRO";
-            wait-ms = <5>;
+            wait-ms = <10>;
             tap-ms = <10>;
         };
         cdr_macro: cdr_macro {
@@ -195,7 +200,7 @@
             #binding-cells = <0>;
             bindings = <&kp C &kp H &kp R &kp I &kp S &kp T &kp I &kp A &kp N &kp DOT &kp D &kp DOT &kp R &kp I &kp T &kp C &kp H &kp I &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "CDR_MACRO";
-            wait-ms = <5>;
+            wait-ms = <10>;
             tap-ms = <10>;
         };
     };
