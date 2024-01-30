@@ -212,68 +212,71 @@
             //                     | FN/ESC|NAV/SPACE|NUM/TAB|      |NUM/ENTER|NAV/BSPACE|FN/DEL |
 
             bindings = <
-&rpi LS(N1) N1  &rpi LS(N2) N2  &rpi LS(N3) N3  &rpi LS(N4) N4  &rpi LS(N5) N5                                 &rpi LS(N6) N6  &rpi LS(N7) N7  &rpi LS(N8) N8   &rpi LS(N9) N9     &rpi LS(N0) N0
-&kp Q           &kp W           &kp E           &kp R           &kp T                                          &kp Y           &kp U           &kp I            &kp O              &rpi PSCRN P
-&kp A           &mt LALT S      &mt LCTRL D     &mt LSHFT F     &kp G                                          &kp H           &mt RSHFT J     &mt RCTRL K      &mt RALT L         &mt LGUI SQT
-&rpi LC(Z) Z    &rpi LC(X) X    &rpi LC(C) C    &rpi LC(V) V    &kp B           &kp LC(LA(DEL))   &kp C_MUTE   &kp N           &kp M           &rpi SEMI COMMA  &rpi LS(SEMI) DOT  &rpi LS(FSLH) FSLH
-                                                &lt FN ESC      &td_sp          &lt NUM TAB       &lt NUM RET  &td_bs          &td_dl
+//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮                                     ╭──────────────┬──────────────┬──────────────┬──────────────┬─────────────────────╮
+   &rpi LS(N1) N1 &rpi LS(N2) N2 &rpi LS(N3) N3 &rpi LS(N4) N4 &rpi LS(N5) N5                                       &rpi LS(N6) N6 &rpi LS(N7) N7 &rpi LS(N8) N8 &rpi LS(N9) N9     &rpi LS(N0) N0
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                                     ├──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &kp Q          &kp W          &kp E           &kp R           &kp T                                             &kp Y          &kp U          &kp I            &kp O              &rpi PSCRN P
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                                     ├──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &kp A          &mt LALT S     &mt LCTRL D     &mt LSHFT F     &kp G                                             &kp H          &mt RSHFT J    &mt RCTRL K      &mt RALT L         &mt LGUI SQT
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────────────────╮ ╭─────────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &rpi LC(Z) Z   &rpi LC(X) X   &rpi LC(C) C    &rpi LC(V) V    &kp B        &kp LC(LA(DEL))     &kp C_MUTE       &kp N          &kp M         &rpi SEMI COMMA &rpi LS(SEMI) DOT &rpi LS(FSLH) FSLH
+//╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼─────────────────┤ ├─────────────────┼──────────────┼──────────────┼──────────────┴──────────────┴─────────────────────╯ 
+                                                  &lt FN ESC      &td_sp          &lt NUM TAB      &lt NUM RET      &td_bs         &td_dl
+//                                             ╰──────────────┴──────────────┴─────────────────╯ ╰─────────────────┴──────────────┴──────────────╯
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
-        nav_layer {
-            // -------------------------------------------------------------------------------------------------
-            // | none  | none  | none  | none  | none |                  | none  | HOME | INS  | PG_UP | none  | 
-            // | none  | none  | none  | none  | none |                  | none  | END  | UP   | PG_DN | none  | 
-            // | none  | none  | none  | none  | none |                  | PSCRN | LEFT | DOWN | RIGHT | none  | 
-            // | none  | none  | none  | none  | none | trans |  | trans | none  | none | none | none  | none  | 
-            //                         | trans | trans| trans |  | trans | trans | trans|      
-
+nav_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                     &trans     &kp HOME  &kp INS   &kp PG_UP  &trans
-&trans  &trans  &trans  &trans  &trans                     &trans     &kp END   &kp UP    &kp PG_DN  &trans
-&trans  &trans  &trans  &trans  &trans                     &kp PSCRN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &tog NUM   &trans     &trans    &kp DOWN  &trans     &trans
-                        &trans  &trans  &trans  &trans     &trans     &trans
+//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮                                     ╭──────────────┬──────────────┬──────────────┬──────────────┬─────────────────────╮
+    &trans          &trans          &trans          &trans          &trans                                             &trans         &kp HOME      &kp INS       &kp PG_UP      &trans
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                                     ├──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &trans          &trans          &trans          &trans          &trans                                             &trans         &kp END       &kp UP        &kp PG_DN      &trans
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                                     ├──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &trans          &trans          &trans          &trans          &trans                                             &kp PSCRN      &kp LEFT      &kp DOWN      &kp RIGHT      &trans
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────────────────╮ ╭─────────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &trans          &trans          &trans          &trans          &trans      &trans              &tog NUM           &trans         &trans        &kp DOWN      &trans         &trans
+//╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼─────────────────┤ ├─────────────────┼──────────────┼──────────────┼──────────────┴──────────────┴─────────────────────╯ 
+                                                   &trans          &trans          &trans              &trans           &trans         &trans
+//                                             ╰──────────────┴──────────────┴─────────────────╯ ╰─────────────────┴──────────────┴──────────────╯
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
-        num_layer {
-            // -------------------------------------------------------------------------------------------------
-            //  | none | none  | none  | none  | none |                  | (     | 	 =     | (   |   ) | /  | 
-            //  | BT0  | BT1   | BT2   | BT3   | BT4  |                  |     ) |    7    | 8   | 9   | -  | 
-            //  | none | none  | none  | none  | none |                  | none  |    4    | 5   | 6   | +  | 
-            //  |BT_CLR| none  | none  | none  | none | trans |  | trans | none  |    1    | 2   | 3   | *  | 
-            //                         | trans | trans| trans |  |    0  | .     | ENTER   | 
-
+num_layer {
             bindings = <
-&trans        &trans        &trans        &trans        &trans                                   &trans       &kp KP_EQUAL   &kp LS(N9)  &kp LS(N0)  &kp KP_SLASH
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &trans       &kp KP_N7      &kp KP_N8   &kp KP_N9   &kp KP_MINUS
-&trans        &trans        &trans        &trans        &trans                                   &trans       &kp KP_N4      &kp KP_N5   &kp KP_N6   &kp KP_PLUS
-&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &trans     &trans       &kp KP_N1      &kp KP_N2   &kp KP_N3   &kp KP_ASTERISK
-                                          &trans        &trans        &trans          &kp KP_N0  &kp KP_DOT   &kp KP_ENTER
+//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮                                     ╭──────────────┬──────────────┬──────────────┬──────────────┬─────────────────────╮
+        &trans        &trans        &trans        &trans        &trans                                                  &trans       &kp KP_EQUAL   &kp LS(N9)      &kp LS(N0)    &kp KP_SLASH
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                                     ├──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                                            &trans       &kp KP_N7      &kp KP_N8       &kp KP_N9     &kp KP_MINUS
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                                     ├──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+        &trans        &trans        &trans        &trans        &trans                                                  &trans       &kp KP_N4      &kp KP_N5       &kp KP_N6     &kp KP_PLUS
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────────────────╮ ╭─────────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+      &bt BT_CLR        &trans        &trans        &trans        &trans           &trans          &trans               &trans       &kp KP_N1      &kp KP_N2       &kp KP_N3     &kp KP_ASTERISK
+//╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼─────────────────┤ ├─────────────────┼──────────────┼──────────────┼──────────────┴──────────────┴─────────────────────╯ 
+                                                   &trans        &trans            &trans          &kp KP_N0          &kp KP_DOT    &kp KP_ENTER
+//                                             ╰──────────────┴──────────────┴─────────────────╯ ╰─────────────────┴──────────────┴──────────────╯
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN >;
-        };
+         };
 
-        fn_layer {
-            // ---------------------------------------------------------------------------------------------------------------------
-            // | F1     | F2      | F3      | F4      | F5       |                      | F6    | F7     | F8     | F9      | F10  |
-            // |BT_SEL 0| BT_SEL 1| BT_SEL 2| BT_SEL 3| BT_SEL 4 |                      | none  | BT_CLR | BT_PRV | BT_NXT  | none |
-            // | OUT_TOG|    (    |    )    | none    | reset    |                      | reset | none   | none   | none    | none |
-            // |BT_CLR  |    [    |    ]    | none    | trans    |bootloader||bootloader| none  | none   | none   | none    | none |
-            //                              | trans   | trans    |   trans  ||  trans   | trans | trans  | 
-
+fn_layer {
             bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                    &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                              &trans      &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &trans
-&out OUT_TOG  &trans        &trans        &trans        &sys_reset                                &sys_reset  &trans      &trans      &trans      &trans
-&bt BT_CLR    &trans        &trans        &trans        &trans        &bootloader   &bootloader   &trans      &trans      &trans      &trans      &trans
-                                          &trans        &trans        &trans        &kp C_PREV    &kp C_NEXT  &trans
+//╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮                                     ╭──────────────┬──────────────┬──────────────┬──────────────┬─────────────────────╮
+        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                    &kp F6      &kp F7          &kp F8        &kp F9       &kp F10
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                                     ├──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                                               &trans      &bt BT_CLR  &bt BT_PRV      &bt BT_NXT      &trans
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                                     ├──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &out OUT_TOG      &trans        &trans        &trans        &sys_reset                                            &sys_reset      &trans          &trans          &trans      &trans
+//├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────────────────╮ ╭─────────────────┼──────────────┼──────────────┼──────────────┼──────────────┼─────────────────────┤ 
+    &bt BT_CLR        &trans        &trans        &trans          &trans        &bootloader           &bootloader       &trans      &trans          &trans          &trans          &trans
+//╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼─────────────────┤ ├─────────────────┼──────────────┼──────────────┼──────────────┴──────────────┴─────────────────────╯ 
+                                                  &trans            &trans        &trans                &kp C_PREV    &kp C_NEXT      &trans
+//                                             ╰──────────────┴──────────────┴─────────────────╯ ╰─────────────────┴──────────────┴──────────────╯
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
