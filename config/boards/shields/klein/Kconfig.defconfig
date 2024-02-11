@@ -22,8 +22,6 @@ config I2C
 config SSD1306
 	default y
 
-LV_DPI_DEF
-
 endif # ZMK_DISPLAY
 
 
