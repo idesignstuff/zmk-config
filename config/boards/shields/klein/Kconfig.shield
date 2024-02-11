@@ -4,3 +4,6 @@ config SHIELD_KLEIN_LEFT
 config SHIELD_KLEIN_RIGHT
     def_bool $(shields_list_contains,klein_right)  
     select NFCT_PINS_AS_GPIOS
+config SHIELD_VIK_SSD1306_128X64
+	def_bool $(shields_list_contains,vik_ssd1306_128x64)
+	imply ZMK_DISPLAY
