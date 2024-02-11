@@ -27,8 +27,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3)  				 RC(3,6) RC(3,7) RC(3,8) RC(3,9)
 
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
-		label = "KSCAN";
-
 		diode-direction = "row2col";
         row-gpios
             = <&xiao_d 0 GPIO_ACTIVE_HIGH>
@@ -41,7 +39,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3)  				 RC(3,6) RC(3,7) RC(3,8) RC(3,9)
 
 left_encoder: encoder_left {
         compatible = "alps,ec11";
-        label = "LEFT_ENCODER";
         a-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
@@ -50,7 +47,6 @@ left_encoder: encoder_left {
 	
 	right_encoder: encoder_right {
         compatible = "alps,ec11";
-        label = "RIGHT_ENCODER";
         a-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
