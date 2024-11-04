@@ -35,26 +35,39 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(4,4)    	RC(4,5)	RC(3,5) RC(3,6) RC(3
 
 		diode-direction = "col2row";
 	row-gpios
-	    = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //&gpio0 5 for spare, marked "res"
-            , <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
+	    	= <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            	, <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            	, <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            	, <&gpio0 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            	, <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            	;
 		
-	};
+	
+	col-gpios 
+		= <&gpio0 1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        	, <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        	, <&gpio0 3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        	, <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        	, <&gpio1 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        	, <&gpio0 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        	, <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        	, <&gpio1 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&gpio1 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        	;
+        };
 	    left_encoder: encoder_left {
         	compatible = "alps,ec11";
-        	a-gpios = <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        	b-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        	a-gpios = <&gpio0 16  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        	b-gpios = <&gpio1 17(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         	steps = <20>;
           status = "disabled";
     	      };
 
 		right_encoder: encoder_right {
         	compatible = "alps,ec11";
-			a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-			b-gpios = <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+			a-gpios = <&gpio1 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+			b-gpios = <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 			steps = <20>;
      	status = "disabled";
              };
@@ -65,25 +78,4 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(4,4)    	RC(4,5)	RC(3,5) RC(3,6) RC(3
         	triggers-per-rotation = <20>;
     		};
 
-};
-/ {
-    aliases {
-        led-red = &led0;
-        led-green = &led1;
-        led-blue = &led2;
-    };
-
-    leds {
-        compatible = "gpio-leds";
-        status = "okay";
-        led0: led_0 {
-            gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;  // red LED, connected to P0.26
-        };
-        led1: led_1 {
-            gpios = <&gpio0 30 GPIO_ACTIVE_LOW>;  // green LED, connected to P0.30
-        };
-        led2: led_2 {
-            gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;  // blue LED, connected to P0.06
-        };
-    };
 };
