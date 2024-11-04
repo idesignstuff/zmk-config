@@ -1,9 +1,8 @@
 # Copyright (c) 2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-# uncomment to allow Windows to update battery level after pairing
-# CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION=n
-
 config ZMK_KEYBOARD_NAME
 	default "anduril"
 
+config SHIELD_ANDURIL
+    def_bool $(shields_list_contains,anduril)
