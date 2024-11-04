@@ -2,7 +2,7 @@ file_format: "1"
 id: anduril
 name: anduril
 type: shield
-requires: [seeed_xiao]
+requires: [nice_nano_v2]
 features:
   - keys
   - encoder
