@@ -6,6 +6,7 @@ requires: [seeed_xiao]
 features:
   - keys
   - encoder
+  - studio
 siblings:
   - narsil_left
   - narsil_right
