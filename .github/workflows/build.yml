@@ -3,9 +3,3 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      config_path: config
-      config_matrices: |
-        config/boards/shields/anduril/anduril.zmk.json
-      build_matrix_path: config/build.yml
-      archive_name: firmware
