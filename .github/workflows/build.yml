@@ -5,51 +5,27 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-toolchain:stable
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Install ZMK Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            git \
-            wget \
-            autoconf \
-            automake \
-            build-essential \
-            ccache \
-            device-tree-compiler \
-            dfu-util \
-            file \
-            gcc \
-            gcc-arm-none-eabi \
-            libtool \
-            make \
-            ninja-build \
-            python3-pip \
-            python3-setuptools \
-            python3-wheel
-
-      - name: Install West
-        run: pip3 install west
-
-      - name: Initialize West Workspace
-        run: |
-          west init -l config
-          west update
-
-      - name: West Zephyr export
+      - name: West Init
+        run: west init -l config
+      
+      - name: West Update
+        run: west update
+      
+      - name: West Zephyr Export
         run: west zephyr-export
-
+      
       - name: Build Anduril Firmware
-        run: |
-          west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=anduril
-
+        run: west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=anduril
+      
       - name: Build Settings Reset Firmware
-        run: |
-          west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=settings_reset
-
+        run: west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=settings_reset
+      
       - name: Archive Firmware
         uses: actions/upload-artifact@v3
         with:
