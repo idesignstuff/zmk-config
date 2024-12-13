@@ -4,32 +4,4 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: zmkfirmware/zmk-build-toolchain:stable
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      
-      - name: West Init
-        run: west init -l config
-      
-      - name: West Update
-        run: west update
-      
-      - name: West Zephyr Export
-        run: west zephyr-export
-      
-      - name: Build Anduril Firmware
-        run: west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=anduril
-      
-      - name: Build Settings Reset Firmware
-        run: west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=settings_reset
-      
-      - name: Archive Firmware
-        uses: actions/upload-artifact@v3
-        with:
-          name: firmware
-          path: build/zephyr/zmk.uf2
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
