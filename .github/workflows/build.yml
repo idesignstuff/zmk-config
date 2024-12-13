@@ -3,29 +3,8 @@ name: Build
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  matrix:
-    runs-on: ubuntu-latest
-    name: Determine build matrix
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install yaml2json
-        run: python3 -m pip install remarshal
-      - id: set-matrix
-        name: Process build matrix
-        run: |
-          matrix=$(yaml2json build.yaml | jq -c .)
-          echo "matrix=${matrix}" >> $GITHUB_OUTPUT
-
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    needs: matrix
-    name: Build
-    strategy:
-      fail-fast: false
-      matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -64,31 +43,28 @@ jobs:
           command-args: zephyr.base ../zephyr
       - name: Update CMAKE
         run: pip3 install --user -U cmake
-      - name: West Build (${{ matrix.board }}-${{ matrix.shield }})
+      - name: West Build (Anduril)
         uses: zmkfirmware/zephyr-build-action@v1
-        id: west-build
+        id: west-build-anduril
         with:
           command: build
-          command-args: -s zmk/app -b ${{ matrix.board }} -- ${{ matrix.shield != '' && format('-DSHIELD={0}', matrix.shield) || '' }} ${{ matrix.cmake-args != '' && matrix.cmake-args || '' }}
-      - name: ${{ matrix.board }}-${{ matrix.shield }} DTS File
-        if: always()
-        run: |
-          if [ -f "build/zephyr/${{ matrix.board }}.${{ matrix.shield }}.dts.pre.tmp" ]; then cat -n build/zephyr/${{ matrix.board }}.${{ matrix.shield }}.dts.pre.tmp; else cat -n build/zephyr/zephyr.dts; fi
-      - name: ${{ matrix.board }}-${{ matrix.shield }} Kconfig file
-        if: always()
-        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
+          command-args: -s zmk/app -b nice_nano_v2 -- -DSHIELD=anduril -DZMK_CONFIG="/workspace/zmk-config/config"
+      - name: West Build (Settings Reset)
+        uses: zmkfirmware/zephyr-build-action@v1
+        id: west-build-reset
+        with:
+          command: build
+          command-args: -s zmk/app -b nice_nano_v2 -- -DSHIELD=settings_reset -DZMK_CONFIG="/workspace/zmk-config/config"
       - name: Rename artifacts
-        if: ${{ matrix.shield != '' }}
         run: |
-          mkdir build/artifacts
-          if [ -f build/zephyr/zmk.uf2 ]
-          then
-            cp build/zephyr/zmk.uf2 "build/artifacts/${{ matrix.board }}-${{ matrix.shield }}-zmk.uf2"
-          elif [ -f build/zephyr/zmk.hex ]
-          then
-            cp build/zephyr/zmk.hex "build/artifacts/${{ matrix.board }}-${{ matrix.shield }}-zmk.hex"
+          mkdir -p build/artifacts
+          if [ -f build/zephyr/zmk.uf2 ]; then
+            cp build/zephyr/zmk.uf2 "build/artifacts/nice_nano_v2-anduril-zmk.uf2"
           fi
-      - name: Archive (${{ matrix.board }}-${{ matrix.shield }})
+          if [ -f build/zephyr/zmk.hex ]; then
+            cp build/zephyr/zmk.hex "build/artifacts/nice_nano_v2-anduril-zmk.hex"
+          fi
+      - name: Archive
         uses: actions/upload-artifact@v3
         with:
           name: firmware
