@@ -89,7 +89,7 @@
 &trans  &trans  &trans       &trans     &trans  &trans  &trans     &kp UP    &trans     &trans
 &trans  &trans  &trans       &trans     &trans  &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans
 &trans  &trans  &trans       &trans     &trans  &trans  &trans     &kp END   &trans     &trans
-        &mo 1   &lt 2 SPACE  &lt 3 TAB  &trans  &trans  &kp ENTER  &kp BSPC  &kp DEL
+        &mo 1   &lt 2 SPACE  &lt 3 TAB  &trans  &trans  &kp ENTER  &kp BSPC  &kp DEL 1
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -108,14 +108,10 @@
 &trans        &trans          &trans        &trans        &trans        &trans       &trans     &trans    &trans   &trans
 &out OUT_TOG  &out OUT_BLE    &out OUT_USB  &trans        &trans        &trans       &trans     &trans    &trans   &trans
 &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans        &trans       &trans     &trans    &trans   &trans
-              &mo 1  ESC       &lt 2 SPACE   &lt 3 TAB    &bootloader   &bootloader  &kp ENTER  &kp BSPC  &kp DEL
+              &mo 1           &lt 2 SPACE   &lt 3 TAB     &bootloader   &bootloader  &kp ENTER  &kp BSPC  &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
-// disable qspi flash for more power saving
-&qspi { 
-      status = "disabled"; 
-      };
