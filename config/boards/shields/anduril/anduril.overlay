@@ -4,20 +4,14 @@
  * SPDX-License-Identifier: MIT
  */
  
-#include <dt-bindings/zmk/matrix_transform.h>
+#include "layouts/anduril.dtsi"
 
 / {
 	anduril_layout: layout {
 		compatible = "zmk,physical-layout";
 		display-name = "Anduril";
 		layout = <
-			&layout_grid
+			&layout_5x10
 		>;
-	};
-
-	layout_grid {
-		compatible = "zmk,layout";
-		rows = <5>;
-		columns = <10>;
 	};
 };
