@@ -1,8 +1,8 @@
 # Copyright (c) 2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
+if SHIELD_ANDURIL
 
 config ZMK_KEYBOARD_NAME
-	default "anduril"
+    default "anduril"
 
-config SHIELD_ANDURIL
-    def_bool $(shields_list_contains,anduril)
+endif
