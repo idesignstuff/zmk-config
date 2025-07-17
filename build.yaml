@@ -1,6 +1,6 @@
 ---
 include:
-  - board: seed_xiao
+  - board: seeeduino_xiao_ble
     shield: narsil
   - board: nice_nano_v2
     shield: anduril
